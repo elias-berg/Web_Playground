@@ -1,0 +1,4 @@
+- Make all images 60x60
+- Split diags into L and R
+- Rename by key direction
+- Hitbox? 21x54?

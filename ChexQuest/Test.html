@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <style>
+      canvas {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <canvas id="gameview"></canvas>
+    </div>
+  </body>
+  
+  <script>
+    // Key press handling
+    var validKeys = {
+      "ArrowDown": true,
+      "ArrowLeft": true,
+      "ArrowRight": true,
+      "ArrowUp": true // keyCode === 38
+    };
+    var keyMap = {};
+    window.onkeydown = function(e){
+      e = e || event; // to deal with IE
+      if (!(validKeys[e.key])) { return; }
+      keyMap[e.key] = true;
+      
+      redraw(); // In case of new direction
+    }
+    window.onkeyup = function(e){
+      e = e || event; // to deal with IE
+      if (!keyMap[e.key]) { return; }
+      delete keyMap[e.key];
+      
+      redraw(); // In case of new direction
+    }
+  
+    // Start of game logic
+    var gameview = document.getElementById("gameview");
+    var context = gameview.getContext("2d");
+    // State variables
+    var frame = 1;
+    var fredSrc = "run_left_1.png";
+    // Fred Chexter
+    var fred = document.createElement("img");
+    fred.id = "fred";
+    fred.src = fredSrc;
+    fred.height = "60px";
+    fred.width = "60px";
+    
+    fred.onload = function()
+    {
+      context.drawImage(fred, 0, 0);
+    }
+    
+    // Drawing logic
+    function doDraw()
+    {
+      // First, clear the screen
+      context.clearRect(0, 0, gameview.width, gameview.height);
+      // Redraw based on new info
+      fred.src = getImgAndDeltasFromKeys();
+      context.drawImage(fred, 0, 0);
+    }
+    
+    function getImgAndDeltasFromKeys()
+    {
+      frame = (frame % 4) + 1;
+      return "./run_left_" + frame + ".png";
+    }
+    
+    function redraw()
+    {
+      if (Object.keys(keyMap).length < 1) { return; }
+      requestAnimationFrame(doDraw);
+    }
+    
+    setInterval(redraw, 125);
+  </script>
+</html>
