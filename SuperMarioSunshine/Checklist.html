@@ -1,0 +1,329 @@
+<html>
+  <head>
+    <style>
+      body, td {
+        font-family: courier;
+        font-weight: 600;
+      }
+    
+      .c {
+        text-align: center;
+        color: yellow;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+      }
+      
+      h1 {
+        font-size: 32px;
+      }
+      
+      h2 {
+        font-size: 30px;
+      }
+      
+      .shine {
+        background-image: url("img/shine.png");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      
+      #checklist {
+        display: flex;
+        flex-direction: column;
+        flex-flow: wrap;
+        max-height: 2000px;
+      }
+      
+      .box {
+        background-color: yellow;
+        color: black;
+        width: 48%;
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      
+      .box:nth-child(n) {
+        box-shadow: 10px 10px black;
+      }
+      
+      .box:nth-child(2n) {
+        box-shadow: 10px 10px grey;
+      }
+      
+      .box-title {
+        writing-mode: vertical-rl;
+        margin: 0;
+        border-right: 2px solid black;
+        text-align: center;
+        font-size: 28px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+      
+      .box-content {
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+      
+      .blue {
+        background-color: lightblue !important;
+      }
+      
+      .blue .box-content {
+        margin: auto;
+      }
+      
+      table {
+        border-collapse: collapse;
+      }
+      
+      #bc-table {
+        width: 300px;
+      }
+      
+      #bc-table td {
+        padding: 15px;
+        text-align: center;
+        user-select: none;
+        min-width: 20px
+        white-space: pre;
+      }
+      
+      #bc-table td:hover {
+        background-color: teal;
+      }
+      
+      #counter {
+        text-align: right;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="float: right;">
+      <div class="shine" style="height: 100px; width: 100px; background-size: contain;">
+        <h2 id="counter">100</h2>
+      </div>
+    </div>
+    
+    <div class="shine">
+      <h1 class="c">Super Mario Sunshine</h1>
+      <h2 class="c">Shine Checklist</h2>
+    </div>
+    
+    
+    <div id="checklist">
+      <div class="box">
+        <p class="box-title">Bianco Hills</p>
+        <div class="box-content">
+          <table class="check_table">
+            <tr><td><input id="1_1" type="checkbox"/>Road To The Big Windmill</td></tr>
+            <tr><td><input id="1_2" type="checkbox"/>Down With Petey Piranha</td></tr>
+            <tr><td><input id="1_3" type="checkbox"/>The Hillside Cave Secret</td></tr>
+            <tr><td><input id="1_4" type="checkbox"/>Red Coins Of Windmill Village</td></tr>
+            <tr><td><input id="1_5" type="checkbox"/>Petey Piranha Strikes Back</td></tr>
+            <tr><td><input id="1_6" type="checkbox"/>The Secret Of The Dirty Lake</td></tr>
+            <tr><td><input id="1_7" type="checkbox"/>Shadow Mario On The Loose</td></tr>
+            <tr><td><input id="1_8" type="checkbox"/>The Red Coins Of The Lake</td></tr>
+            <tr><td><input id="1_s1" type="checkbox"/>Episode 3 - The Hillside Cave Secret RC</td></tr>
+            <tr><td><input id="1_s2" type="checkbox"/>Episode 6 - The Secret of the Dirty Lake RC</td></tr>
+            <tr><td><input id="1_100" type="checkbox"/>100 Coins</td></tr>
+          </table>
+        </div>
+      </div>
+      
+      <div class="box">
+        <p class="box-title">Ricco Harbour</p>
+        <div class="box-content">
+          <table class="check_table">
+            <tr><td><input id="2_1" type="checkbox"/>Gooper Blooper Breaks Out</td></tr>
+            <tr><td><input id="2_2" type="checkbox"/>Blooper Surfing Safari</td></tr>
+            <tr><td><input id="2_3" type="checkbox"/>The Caged Shine Sprite</td></tr>
+            <tr><td><input id="2_4" type="checkbox"/>The Secret Of Ricco Tower</td></tr>
+            <tr><td><input id="2_5" type="checkbox"/>Glooper Blooper Returns</td></tr>
+            <tr><td><input id="2_6" type="checkbox"/>Red Coins In The Water</td></tr>
+            <tr><td><input id="2_7" type="checkbox"/>Shadow Mario Revisited</td></tr>
+            <tr><td><input id="2_8" type="checkbox"/>Yoshi's Fruit Adventure</td></tr>
+            <tr><td><input id="2_s1" type="checkbox"/>Episode 2 - Blooper Surfing Safari (under 40 seconds)</td></tr>
+            <tr><td><input id="2_s2" type="checkbox"/>Episode 4 - The Secret of Ricco Tower RC</td></tr>
+            <tr><td><input id="2_100" type="checkbox"/>100 Coins</td></tr>
+          </table>
+        </div>
+      </div>
+      
+      <div class="box">
+        <p class="box-title">Gelato Beach</p>
+        <div class="box-content">
+          <table class="check_table">
+            <tr><td><input id="3_1" type="checkbox"/>Dune Bud Sand Castle Secret</td></tr>
+            <tr><td><input id="3_2" type="checkbox"/>Mirror Madness! Tilt, Slam, Bam!</td></tr>
+            <tr><td><input id="3_3" type="checkbox"/>Wiggler Ahoy! Full Steam Ahead!</td></tr>
+            <tr><td><input id="3_4" type="checkbox"/>The Sand Bird Is Born</td></tr>
+            <tr><td><input id="3_5" type="checkbox"/>II Piantissimo's Sand Sprint</td></tr>
+            <tr><td><input id="3_6" type="checkbox"/>Red Coins In The Coral Reef</td></tr>
+            <tr><td><input id="3_7" type="checkbox"/>It's Shadow Mario! After Him!</td></tr>
+            <tr><td><input id="3_8" type="checkbox"/>The Watermelon Festival</td></tr>
+            <tr><td><input id="3_s1" type="checkbox"/>Sand bud wall hidden Shine picture</td></tr>
+            <tr><td><input id="3_s2" type="checkbox"/>Episode 1 - Dune Bud Sand Castle Secret RC</td></tr>
+            <tr><td><input id="3_100" type="checkbox"/>100 Coins</td></tr>
+          </table>
+        </div>
+      </div>
+      
+      <div class="box">
+        <p class="box-title">Pleaceholder</p>
+        <div class="box-content">
+          <table class="check_table">
+            <tr><td><input id="3_1" type="checkbox"/>Pleaceholder</td></tr>
+            <tr><td><input id="3_2" type="checkbox"/>Pleaceholder</td></tr>
+            <tr><td><input id="3_3" type="checkbox"/>Pleaceholder</td></tr>
+            <tr><td><input id="3_4" type="checkbox"/>Pleaceholder</td></tr>
+            <tr><td><input id="3_5" type="checkbox"/>Pleaceholder</td></tr>
+            <tr><td><input id="3_6" type="checkbox"/>Pleaceholder</td></tr>
+            <tr><td><input id="3_7" type="checkbox"/>Pleaceholder</td></tr>
+            <tr><td><input id="3_8" type="checkbox"/>Pleaceholder</td></tr>
+            <tr><td><input id="3_s1" type="checkbox"/>Pleaceholder</td></tr>
+            <tr><td><input id="3_s2" type="checkbox"/>Pleaceholder</td></tr>
+            <tr><td><input id="3_100" type="checkbox"/>100 Coins</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="box blue">
+        <p class="box-title">Blue Coins</p>
+        <p class="box-content">
+          <table id="bc-table" onclick="">
+          </table>
+        </p>
+      </div>
+    </div>
+  <body>
+  
+  <script>
+    var bcTable = document.getElementById("bc-table");
+    for (var i = 0; i < 3; i++)
+    {
+      var row = document.createElement("tr");
+      bcTable.appendChild(row);
+      for (var j = 0; j < 8; j++)
+      {
+        var cell = document.createElement("td");
+        var id = (i*8)+(j+1);
+        cell.id = id;
+        cell.innerText = id;
+        cell.style.backgroundRepeat = "no-repeat";
+        cell.style.backgroundPosition = "center";
+        cell.style.backgroundSize = "contain";
+        cell.addEventListener("click", changeBackground);
+        row.appendChild(cell);
+      }
+    }
+  
+    function changeBackground(event)
+    {
+      var elem = event.target;
+      console.log(elem.style.backgroundImage);
+      
+      if (!elem.style.backgroundImage)
+      {
+        elem.style.backgroundImage = 'url("img/bluecoin.png")';
+      }
+      else
+      {
+        elem.style.backgroundImage = '';
+      }
+    }
+    
+    /*
+
+- Pinna Park -
+[ ] Episode 1 - Mecha-Bowser Appears!
+[ ] Episode 2 - The Beach Cannon's Secret
+[ ] Episode 3 - Red Coins Of The Pirate Ships
+[ ] Episode 4 - The Wilted Sunflowers
+[ ] Episode 5 - The Runaway Ferris Wheel
+[ ] Episode 6 - The Yoshi-Go-Round's Secret
+[ ] Episode 7 - Shadow Mario In The Park
+[ ] Episode 8 - Roller Coaster Balloons
+[ ] Secret Shine 1 - Episode 2 - The Beach Cannon's Secret - Red Coin Challenge
+[ ] Secret Shine 2 - Episode 6 - The Yoshi-Go-Round's Secret - Red Coin
+Challenge
+[ ] 100 Coin Shine
+
+- Sirena Beach -
+[ ] Episode 1 - The Manta Storm
+[ ] Episode 2 - The Hotel Lobby's Secret
+[ ] Episode 3 - Mysterious Hotel Delfino
+[ ] Episode 4 - The Secret Of Casino Delfino
+[ ] Episode 5 - King Boo Down Below
+[ ] Episode 6 - Scrubbing Sirena Beach
+[ ] Episode 7 - Shadow Mario Checks In
+[ ] Episode 8 - Red Coins In The Hotel
+[ ] Secret Shine 1 - Episode 2 - The Hotel Lobby's Secret - Red Coin Challenge
+[ ] Secret Shine 2 - Episode 4 - The Secret of Casino Delfino - Red Coin
+Challenge
+[ ] 100 Coin Shine
+
+- Noki Bay -
+[ ] Episode 1 - Uncork The Waterfall
+[ ] Episode 2 - The Boss Of Tricky Ruins
+[ ] Episode 3 - Red Coins In A Bottle
+[ ] Episode 4 - Eely-Mouth's Dentist
+[ ] Episode 5 - II Piantissimo's Surf Swim
+[ ] Episode 6 - The Shell's Secret
+[ ] Episode 7 - Hold It, Shadow Mario!
+[ ] Episode 8 - The Red Coin Fish
+[ ] Secret Shine 1 - Spray the gold bird on the northwestern cliff
+[ ] Secret Shine 2 - Episode 6 - The Shell's Secret - Red Coin Challenge
+[ ] 100 Coin Shine
+
+- Pianta Village -
+[ ] Episode 1 - Chain Chomplets Unchained
+[ ] Episode 2 - II Piantissmo's Crazy Climb
+[ ] Episode 3 - The Gloopy Inferno
+[ ] Episode 4 - Chain Chomp's Bath
+[ ] Episode 5 - Secret Of The Village Underside
+[ ] Episode 6 - Pianta's In Need
+[ ] Episode 7 - Shadow Mario Runs Wild
+[ ] Episode 8 - Fluff Festival Coin Hunt
+[ ] Secret Shine 1 - Episode 5 - Secret of the Village Underside - Red Coin
+Challenge
+[ ] Secret Shine 2 - Episode 8 - Fluff Festival Coin Hunt - get to the top of
+the center tree and spray the sun
+[ ] 100 Coin Shine
+
+- Delfino Plaza -
+[ ] Shine 1
+[ ] Shine 2
+[ ] Shine 3
+[ ] Shine 4
+[ ] Shine 5
+[ ] Shine 6
+[ ] Shine 7
+[ ] Shine 8
+[ ] Shine 9
+[ ] Shine 10
+[ ] Shine 11
+[ ] Shine 12
+[ ] Shine 13
+[ ] Shine 14
+[ ] Shine 15
+[ ] Shine 16
+[ ] Shine 17
+
+- Delfino Airstrip -
+[ ] Shine 1 - First Shine Of The Game
+[ ] Shine 2 - Red Coin Challenge*/
+  </script>
+</html>
