@@ -6,6 +6,13 @@
         font-weight: 600;
       }
       
+      body {
+        background-image: url("img/background.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      
       .title {
         text-align: center;
         color: yellow;
@@ -33,7 +40,6 @@
         background-image: url("img/shine.png");
         background-repeat: no-repeat;
         background-position: center;
-        box-shadow: 0 0 20px 20px white inset;
       }
       
       #checklist {
@@ -123,8 +129,10 @@
       }
       
       .counter-container {
-        float: right;
+        position: fixed;
         border: 1px dotted black;
+        background-color: lightgray;
+        opacity: 0.8;
       }
       
       #counter {
