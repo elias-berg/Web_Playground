@@ -42,11 +42,23 @@
         background-position: center;
       }
       
+      .bluecoin {
+        background-image: url("img/bluecoin.png");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      
+      .hamburger {
+        background-image: url("img/fluddburger.png");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      
       #checklist {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        max-height: 1100px;
+        max-height: 1400px;
       }
       
       .box {
@@ -83,37 +95,29 @@
         padding-top: 10px;
         padding-bottom: 10px;
         padding-right: 5px;
-        padding-left: 5px;
+        padding-left: 10px;
+        width: 400px;
       }
       
-      .blue {
-        background-color: lightblue !important;
-        position: fixed;
-        height: 100px;
-        right: 5px;
-        opacity: 0.7;
-        box-shadow: none;
-        border: 1px dotted black;
+      .check_table td {
+        padding-top: 5px;
       }
       
-      .blue:hover {
-        opacity: 1;
-        box-shadow: 10px 10px rgba(0,0,0,0.3);
-        border: 1px solid black;
-      }
-      
-      .blue .box-content {
-        margin: auto;
-      }
-      
-      .blue .box-title {
-        font-size: 20px;
-        padding: 5px;
+      .rc {
+        width: 15px;
+        height: 15px;
+        padding-left: 12px;
+        display: inline-block;
+        vertical-align: top;
+        background-image: url("img/redcoin.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
       }
       
       .checkbox {
-        min-width: 20px;
-        min-height: 20px;
+        width: 20px;
+        height: 20px;
         margin-right: 5px;
         border: 1px solid black;
         background-repeat: no-repeat;
@@ -127,10 +131,6 @@
         border-collapse: collapse;
       }
       
-      #bc-table {
-        width: 300px;
-      }
-      
       #bc-table td {
         padding: 10px;
         text-align: center;
@@ -140,41 +140,31 @@
         background-size: contain;
       }
       
-      #bc-table td:hover {
-        background-color: teal;
-      }
-      
-      #bc-counter {
-        width: 50px;
-        height: 50px;
-        background-image: url("img/bluecoin.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        text-align: center;
-        font-size: 28px;
-        padding-top: 20px;
-        color: lightblue;
-        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-        width: 80;
-        user-select: none;
-      }
-      
-      .shadow-text {
-        font-size: 28px;
-        user-select: none;
-        cursor: pointer;
-        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-      }
-      
-      .counter-container {
+      .hamburger-container {
         position: fixed;
+        left: 10px;
+        border: none;
+        background-color: transparent;
+        opacity: 0.3;
+      }
+      
+      .hamburger-container:hover {
+        opacity: 1;
+      }
+      
+      .counters-container {
+        position: fixed;
+        right: 10px;
+        display: flex;
+      }
+      
+      .shine-counter {
         border: 1px dotted black;
         background-color: lightgray;
         opacity: 0.7;
       }
       
-      .counter-container:hover {
+      .shine-counter:hover {
         opacity: 1;
         border: 1px solid black;
         box-shadow: 10px 10px rgba(0,0,0,0.3);
@@ -188,34 +178,75 @@
         color: yellow;
         text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
       }
+      
+      .shine-counter + .blue-coin-counter {
+        margin-left: 10px;
+      }
+      
+      .blue-coin-counter {
+        border: 1px dotted black;
+        background-color: lightblue;
+        opacity: 0.7;
+      }
+      
+      .blue-coin-counter:hover {
+        opacity: 1;
+        border: 1px solid black;
+        box-shadow: 10px 10px rgba(0,0,0,0.3);
+      }
+      
+      #bc-counter {
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        padding-right: 5px;
+        color: blue;
+        text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+      }
+      
+      .bc-table {
+        margin-top: 10px;
+      }
+      
+      .bc-table td {
+        padding: 5px;
+        margin: 1px;
+        text-align: center;
+        user-select: none;
+      }
+      
+      .bc-table td div {
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-color: lightblue;
+        box-shadow: -1px 1px grey;
+      }
     </style>
   </head>
   <body>
     <div class="shine header-img"></div>
   
-    <div class="counter-container">
-      <div class="shine" style="height: 100px; width: 100px; background-size: contain;">
-        <h2 id="counter">0</h2>
+    <div class="hamburger-container">
+      <div class="hamburger" style="height: 100px; width: 100px; background-size: contain;">
       </div>
     </div>
-    
-    
-      <div class="box blue">
-        <p class="box-title">Blue Coins</p>
-        <p class="box-content">
-          <table>
-            <tr>
-              <td class="shadow-text" style="color: red;" onclick="adjBcCnt(-1)">-</td>
-              <td><div id="bc-counter">0</div></td>
-              <td class="shadow-text" style="color: green;" onclick="adjBcCnt(1)">+</td>
-            </tr>
-          </table>
-        </p>
-        <p class="box-content">
-          <table id="bc-table">
-          </table>
-        </p>
+  
+    <div class="counters-container">
+      <div class="shine-counter">
+        <div class="shine" style="height: 100px; width: 100px; background-size: contain;">
+          <h2 id="counter">0</h2>
+        </div>
       </div>
+      <div class="blue-coin-counter">
+        <div class="bluecoin" style="height: 100px; width: 100px; background-size: contain;">
+          <h2 id="bc-counter">0</h2>
+        </div>
+      </div>
+    </div>
     
     <div class="title">
       <h1>Super Mario Sunshine</h1>
@@ -223,48 +254,42 @@
     </div>
         
     <div id="checklist">
+    
+      <div class="box">
+        <p class="box-title" style="font-size: 22px;">Airstrip</p>
+        <div class="box-content">
+          <table class="check_table">
+            <tr><td><div id="da_1" class="checkbox"/></td><td>First Shine Of The Game</td></tr>
+            <tr><td><div id="da_2" class="checkbox"/></td><td>Red Coin Challenge<div class="rc"/></td></tr>
+          </table>
+          <table id="da_bc" class="bc-table" data-rows="1" data-cols="1"></table>
+        </div>
+      </div>
       
       <div class="box">
-        <p class="box-title">Delfino</p>
-        <table>
-          <tr>
-            <td><p class="box-title">Plaza</p></td>
-            <td>
-              <div class="box-content">
-                <table class="check_table">
-                  <tr><td><div id="dp_1" class="checkbox"/></td><td>Lighthouse Shine Symbol</td></tr>
-                  <tr><td><div id="dp_2" class="checkbox"/></td><td>Water Pillars Pipe Challenge</td></tr>
-                  <tr><td><div id="dp_3" class="checkbox"/></td><td>Crate Stomping 1</td></tr>
-                  <tr><td><div id="dp_4" class="checkbox"/></td><td>Crate Stomping 2</td></tr>
-                  <tr><td><div id="dp_5" class="checkbox"/></td><td>Pianta Launch</td></tr>
-                  <tr><td><div id="dp_6" class="checkbox"/></td><td>Island Gold Bird</td></tr>
-                  <tr><td><div id="dp_7" class="checkbox"/></td><td>Under the Bridge Challenge</td></tr>
-                  <tr><td><div id="dp_8" class="checkbox"/></td><td>Fire Pipe Challenge RC</td></tr>
-                  <tr><td><div id="dp_9" class="checkbox"/></td><td>West Door Turbo Nozzle</td></tr>
-                  <tr><td><div id="dp_10" class="checkbox"/></td><td>Police Door Challenge</td></tr>
-                  <tr><td><div id="dp_11" class="checkbox"/></td><td>High Point Pipe Challenge</td></tr>
-                  <tr><td><div id="dp_12" class="checkbox"/></td><td>Western Bell Tower Cleaning</td></tr>
-                  <tr><td><div id="dp_13" class="checkbox"/></td><td>Eastern Bell Tower Cleaning</td></tr>
-                  <tr><td><div id="dp_14" class="checkbox"/></td><td>Shine Gate Cleaning</td></tr>
-                  <tr><td><div id="dp_15" class="checkbox"/></td><td>Lighthouse Butt Stomp</td></tr>
-                  <tr><td><div id="dp_16" class="checkbox"/></td><td>Corona Mountain</td></tr>
-                  <tr><td><div id="dp_100" class="checkbox"/></td><td>100 Coins</td></tr>
-                </table>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><p class="box-title" style="font-size: 18px;">Airstrip</p></td>
-            <td>
-              <div class="box-content">
-                <table class="check_table">
-                  <tr><td><div id="da_1" class="checkbox"/></td><td>First Shine Of The Game</td></tr>
-                  <tr><td><div id="da_2" class="checkbox"/></td><td>Red Coin Challenge</td></tr>
-                </table>
-              </div>
-            </td>
-          </tr>
-        </table>
+        <p class="box-title">Delfino Plaza</p>
+        <div class="box-content">
+          <table class="check_table">
+            <tr><td><div id="dp_1" class="checkbox"/></td><td>Lighthouse Shine Symbol</td></tr>
+            <tr><td><div id="dp_2" class="checkbox"/></td><td>Water Pillars Pipe Challenge</td></tr>
+            <tr><td><div id="dp_3" class="checkbox"/></td><td>Crate Stomping 1</td></tr>
+            <tr><td><div id="dp_4" class="checkbox"/></td><td>Crate Stomping 2</td></tr>
+            <tr><td><div id="dp_5" class="checkbox"/></td><td>Pianta Launch</td></tr>
+            <tr><td><div id="dp_6" class="checkbox"/></td><td>Island Gold Bird</td></tr>
+            <tr><td><div id="dp_7" class="checkbox"/></td><td>Under the Bridge Challenge<div class="rc"/></td></tr>
+            <tr><td><div id="dp_8" class="checkbox"/></td><td>Fire Pipe Challenge<div class="rc"/></td></tr>
+            <tr><td><div id="dp_9" class="checkbox"/></td><td>West Door Turbo Nozzle</td></tr>
+            <tr><td><div id="dp_10" class="checkbox"/></td><td>Police Door Challenge</td></tr>
+            <tr><td><div id="dp_11" class="checkbox"/></td><td>High Point Pipe Challenge<div class="rc"/></td></tr>
+            <tr><td><div id="dp_12" class="checkbox"/></td><td>Western Bell Tower Cleaning</td></tr>
+            <tr><td><div id="dp_13" class="checkbox"/></td><td>Eastern Bell Tower Cleaning</td></tr>
+            <tr><td><div id="dp_14" class="checkbox"/></td><td>Shine Gate Cleaning</td></tr>
+            <tr><td><div id="dp_15" class="checkbox"/></td><td>Lighthouse Butt Stomp</td></tr>
+            <tr><td><div id="dp_16" class="checkbox"/></td><td>Corona Mountain</td></tr>
+            <tr><td><div id="dp_100" class="checkbox"/></td><td>100 Coins</td></tr>
+          </table>
+          <table id="dp_bc" class="bc-table" data-rows="2" data-cols="9" data-extra="1"></table>
+        </div>
       </div>
     
       <div class="box">
@@ -279,10 +304,11 @@
             <tr><td><div id="1_6" class="checkbox"/></td><td>The Secret Of The Dirty Lake</td></tr>
             <tr><td><div id="1_7" class="checkbox"/></td><td>Shadow Mario On The Loose</td></tr>
             <tr><td><div id="1_8" class="checkbox"/></td><td>The Red Coins Of The Lake</td></tr>
-            <tr><td><div id="1_s1" class="checkbox"/></td><td>Episode 3 - The Hillside Cave Secret RC</td></tr>
-            <tr><td><div id="1_s2" class="checkbox"/></td><td>Episode 6 - The Secret of the Dirty Lake RC</td></tr>
+            <tr><td><div id="1_s1" class="checkbox"/></td><td>Episode 3<div class="rc"/></td></tr>
+            <tr><td><div id="1_s2" class="checkbox"/></td><td>Episode 6<div class="rc"/></td></tr>
             <tr><td><div id="1_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
+          <table id="1_bc"  class="bc-table" data-rows="3" data-cols="10"></table>
         </div>
       </div>
       
@@ -299,9 +325,10 @@
             <tr><td><div id="2_7" class="checkbox"/></td><td>Shadow Mario Revisited</td></tr>
             <tr><td><div id="2_8" class="checkbox"/></td><td>Yoshi's Fruit Adventure</td></tr>
             <tr><td><div id="2_s1" class="checkbox"/></td><td>Episode 2 - Blooper Surfing Safari (under 40 seconds)</td></tr>
-            <tr><td><div id="2_s2" class="checkbox"/></td><td>Episode 4 - The Secret of Ricco Tower RC</td></tr>
+            <tr><td><div id="2_s2" class="checkbox"/></td><td>Episode 4<div class="rc"/></td></tr>
             <tr><td><div id="2_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
+          <table id="2_bc" class="bc-table" data-rows="3" data-cols="10"></table>
         </div>
       </div>
       
@@ -318,9 +345,10 @@
             <tr><td><div id="3_7" class="checkbox"/></td><td>It's Shadow Mario! After Him!</td></tr>
             <tr><td><div id="3_8" class="checkbox"/></td><td>The Watermelon Festival</td></tr>
             <tr><td><div id="3_s1" class="checkbox"/></td><td>Sand bud wall hidden Shine picture</td></tr>
-            <tr><td><div id="3_s2" class="checkbox"/></td><td>Episode 1 - Dune Bud Sand Castle Secret RC</td></tr>
+            <tr><td><div id="3_s2" class="checkbox"/></td><td>Episode 1<div class="rc"/></td></tr>
             <tr><td><div id="3_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
+          <table id="3_bc" class="bc-table" data-rows="3" data-cols="10"></table>
         </div>
       </div>
       
@@ -336,10 +364,11 @@
             <tr><td><div id="4_6" class="checkbox"/></td><td>The Yoshi-Go-Round's Secret</td></tr>
             <tr><td><div id="4_7" class="checkbox"/></td><td>Shadow Mario In The Park</td></tr>
             <tr><td><div id="4_8" class="checkbox"/></td><td>Roller Coaster Balloons</td></tr>
-            <tr><td><div id="4_s1" class="checkbox"/></td><td>Episode 2 - The Beach Cannon's Secret RC</td></tr>
-            <tr><td><div id="4_s2" class="checkbox"/></td><td>Episode 6 - The Yoshi-Go-Round's Secret RC</td></tr>
+            <tr><td><div id="4_s1" class="checkbox"/></td><td>Episode 2<div class="rc"/></td></tr>
+            <tr><td><div id="4_s2" class="checkbox"/></td><td>Episode 6<div class="rc"/></td></tr>
             <tr><td><div id="4_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
+          <table id="4_bc" class="bc-table" data-rows="3" data-cols="10"></table>
         </div>
       </div>
       
@@ -355,10 +384,11 @@
             <tr><td><div id="5_6" class="checkbox"/></td><td>Scrubbing Sirena Beach</td></tr>
             <tr><td><div id="5_7" class="checkbox"/></td><td>Shadow Mario Checks In</td></tr>
             <tr><td><div id="5_8" class="checkbox"/></td><td>Red Coins In The Hotel</td></tr>
-            <tr><td><div id="5_s1" class="checkbox"/></td><td>Episode 2 - The Hotel Lobby's Secret RC</td></tr>
-            <tr><td><div id="5_s2" class="checkbox"/></td><td>Episode 4 - The Secret of Casino Delfino RC</td></tr>
+            <tr><td><div id="5_s1" class="checkbox"/></td><td>Episode 2<div class="rc"/></td></tr>
+            <tr><td><div id="5_s2" class="checkbox"/></td><td>Episode 4<div class="rc"/></td></tr>
             <tr><td><div id="5_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
+          <table id="5_bc" class="bc-table" data-rows="3" data-cols="10"></table>
         </div>
       </div>
       
@@ -375,9 +405,10 @@
             <tr><td><div id="6_7" class="checkbox"/></td><td>Hold It, Shadow Mario!</td></tr>
             <tr><td><div id="6_8" class="checkbox"/></td><td>The Red Coin Fish</td></tr>
             <tr><td><div id="6_s1" class="checkbox"/></td><td>Northwestern cliff gold bird</td></tr>
-            <tr><td><div id="6_s2" class="checkbox"/></td><td>Episode 6 - The Shell's Secret RC</td></tr>
+            <tr><td><div id="6_s2" class="checkbox"/></td><td>Episode 6<div class="rc"/></td></tr>
             <tr><td><div id="6_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
+          <table id="6_bc" class="bc-table" data-rows="3" data-cols="10"></table>
         </div>
       </div>
 
@@ -387,16 +418,17 @@
           <table class="check_table">
             <tr><td><div id="7_1" class="checkbox"/></td><td>Chain Chomplets Unchained</td></tr>
             <tr><td><div id="7_2" class="checkbox"/></td><td>II Piantissmo's Crazy Climb</td></tr>
-            <tr><td><div id="7_3" class="checkbox"/></td><td>The Gloopy Inferno</td></tr>
+            <tr><td><div id="7_3" class="checkbox"/></td><td>The Goopy Inferno</td></tr>
             <tr><td><div id="7_4" class="checkbox"/></td><td>Chain Chomp's Bath</td></tr>
             <tr><td><div id="7_5" class="checkbox"/></td><td>Secret Of The Village Underside</td></tr>
             <tr><td><div id="7_6" class="checkbox"/></td><td>Pianta's In Need</td></tr>
             <tr><td><div id="7_7" class="checkbox"/></td><td>Shadow Mario Runs Wild</td></tr>
             <tr><td><div id="7_8" class="checkbox"/></td><td>Fluff Festival Coin Hunt</td></tr>
-            <tr><td><div id="7_s1" class="checkbox"/></td><td>Episode 5 - Secret of the Village Underside RC</td></tr>
+            <tr><td><div id="7_s1" class="checkbox"/></td><td>Episode 5<div class="rc"/></td></tr>
             <tr><td><div id="7_s2" class="checkbox"/></td><td>Episode 8 - Spray the sun from the center tree</td></tr>
             <tr><td><div id="7_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
+          <table id="7_bc" class="bc-table" data-rows="3" data-cols="10"></table>
         </div>
       </div>
       
@@ -404,27 +436,67 @@
   <body>
   
   <script>
-    // Blue Coins Table
-    var bcTable = document.getElementById("bc-table");
-    var rows = 2;
-    var cols = 12;
-    for (var i = 0; i < rows; i++)
+    // Blue Coins Tables
+    var bcCtl = document.getElementById("bc-counter");
+    var bcCnt = 0;
+    
+    var bcTables = document.getElementsByClassName("bc-table");
+    for (var idx in bcTables)
     {
-      var row = document.createElement("tr");
-      bcTable.appendChild(row);
-      for (var j = 0; j < cols; j++)
+      var bcTable = bcTables[idx];
+      if (!bcTable) continue;
+      createBCTable(bcTable);
+    }
+    
+    function createBCTable(table)
+    {
+      if (!table) return;
+      if (!table.dataset) return;
+      
+      var rows = table.dataset.rows;
+      var cols = table.dataset.cols;
+    
+      for (var i = 0; i < rows; i++)
       {
-        var cell = document.createElement("td");
-        var id = (j+1)+(i*cols);
-        cell.id = id;
-        cell.innerText = id;
-        row.appendChild(cell);
+        var row = document.createElement("tr");
+        table.appendChild(row);
+        for (var j = 0; j < cols; j++)
+        {
+          var cell = document.createElement("td");
+          var id = (j+1)+(i*cols);
+          var div = document.createElement("div");
+          cell.appendChild(div);
+          div.id = table.id + "_" + id;
+          div.addEventListener("click", changeBCBackground);
+          row.appendChild(cell);
+        }
+      }
+      
+    }
+    
+    bcMap = {};
+    function changeBCBackground(event)
+    {
+      var elem = event.target;
+      
+      if (!elem.style.backgroundImage)
+      {
+        elem.style.backgroundImage = 'url("img/bccheck.png")';
+        bcCtl.innerText = ++bcCnt;
+        bcMap[elem.id] = 1;
+      }
+      else
+      {
+        elem.style.backgroundImage = '';
+        bcCtl.innerText = --bcCnt;
+        delete bcMap[elem.id];
       }
     }
     
     // Checkboxes
     var totalCtl = document.getElementById("counter");
     var totalCnt = 0;
+    var shineMap = []; // For loading/saving
     
     var checkboxes = document.getElementsByClassName("checkbox");
     for (var i = 0; i < checkboxes.length; i++)
@@ -436,50 +508,76 @@
     function changeBackground(event)
     {
       var elem = event.target;
-      //console.log("onClick: " + event.target.id);
       
       if (!elem.style.backgroundImage)
       {
         elem.style.backgroundImage = 'url("img/check.png")';
         totalCtl.innerText = ++totalCnt;
+        shineMap[elem.id] = 1;
       }
       else
       {
         elem.style.backgroundImage = '';
         totalCtl.innerText = --totalCnt;
+        delete shineMap[elem.id];
       }
     }
     
-    // Blue Coins counter
-    var bcCnt = 0;
-    var lastCellID = 0;
-    var bcCounter = document.getElementById("bc-counter");
-    
-    function adjBcCnt(num)
+    // Loading checklist file
+    function loadFile()
     {
-      var sum = bcCnt + num;
-      if (sum < 0 || sum > 240) return;
-      bcCnt = sum;
-      bcCounter.innerText = bcCnt;
       
-      if (sum % 10 === 0)
-      {
-        var lastCell = getNextCell(sum);
-        if (lastCell !== null)
-        {
-          lastCell.className += "shine";
-          totalCtl.innerText = ++totalCnt;
-        }
-      }
     }
     
-    function getNextCell(num)
+    function deserializeData()
     {
-      console.log("Cell ID: " + lastCellID);
-      lastCellID = (num / 10);
-      console.log("Cell ID: " + lastCellID);
-      if (lastCellID === 0) return null;
-      return document.getElementById(lastCellID);
+    }
+    
+    // Saving checklist file
+    function saveFile()
+    {
+        var data = serializeData();
+        var file = new Blob([data], {type: 'text/plain'});
+        var a = document.createElement("a");
+        var url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = "sms.checklist";
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
+    }
+    
+    function serializeData()
+    {
+      var data = "{";
+      var id;
+      
+      // Shines
+      data = data + "\"shines\": [";
+      id = "";
+      for (id in shineMap)
+      {
+        data = data + "\"" + id + "\", ";
+      }
+      if (id !== "")
+        data = data.substring(0, data.length - 2); // Strip last ', '
+      data = data + "]";
+      
+      // Blue Coins
+      data = data + ", \"coins\": [";
+      id = "";
+      for (id in bcMap)
+      {
+        data = data + "\"" + id + "\", ";
+      }
+      if (id !== "")
+        data = data.substring(0, data.length - 2); // Strip last ', '
+      data = data + "]";
+      
+      return data + "}";
     }
   </script>
 </html>
