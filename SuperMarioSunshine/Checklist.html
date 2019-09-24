@@ -27,6 +27,21 @@
         font-size: 30px;
       }
       
+      #menu_div {
+        position: fixed;
+        width: 15%;
+        height: 100%;
+        background-color: teal;
+        opacity: 0.7;
+        z-index: 1;
+        top: 0;
+        left: 0;
+      }
+      
+      .nodisp {
+        display: none;
+      }
+      
       .header-img {
         position: absolute;
         width: 100%;
@@ -230,8 +245,18 @@
   <body>
     <div class="shine header-img"></div>
   
+    <div id="menu_div" class="nodisp">
+      <div class="menu_button" onclick="loadFile()">Load</div>
+      <div class="menu_button" onclick="saveFile()">Save</div>
+      <div id="file_anchors" class="nodisp">
+        <input id="input_file" type="file" onchange="parseFile()" />
+        <a download="sms.checklist" id="output_file" />
+      </div>
+    </div>
+  
     <div class="hamburger-container">
-      <div class="hamburger" style="height: 100px; width: 100px; background-size: contain;">
+      <div class="hamburger" style="height: 100px; width: 100px; background-size: contain;"
+        onclick="showMenu()">
       </div>
     </div>
   
@@ -524,60 +549,132 @@
     }
     
     // Loading checklist file
+    var input_file = document.getElementById("input_file");
+    
     function loadFile()
     {
-      
+      input_file.click();
     }
     
-    function deserializeData()
+    function parseFile()
     {
+      var file = input_file.files[0];
+      var reader = new FileReader();
+      
+      reader.onload = function() {
+        clearAll();
+        processData(JSON.parse(reader.result));
+      }
+      
+      reader.readAsText(file);
+    }
+    
+    function processData(data)
+    {
+      if (!data) { return; }
+      
+      var i, id, checkbox;
+    
+      var shines = data.shines;
+      if (shines)
+      {
+        for (i = 0; i < shines.length; i++)
+        {
+          id = shines[i];
+          checkbox = document.getElementById(id);
+          if (!checkbox) continue;
+          changeBackground({ target: checkbox });
+        }
+      }
+      
+      var coins = data.coins;
+      if (coins)
+      {
+        for (i = 0; i < coins.length; i++)
+        {
+          id = coins[i];
+          checkbox = document.getElementById(id);
+          if (!checkbox) continue;
+          changeBCBackground({ target: checkbox });
+        }
+      }
     }
     
     // Saving checklist file
+    var output_file = document.getElementById("output_file");
     function saveFile()
     {
         var data = serializeData();
         var file = new Blob([data], {type: 'text/plain'});
-        var a = document.createElement("a");
         var url = URL.createObjectURL(file);
-        a.href = url;
-        a.download = "sms.checklist";
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(function() {
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);  
-        }, 0); 
+        output_file.href = url;
+        output_file.click();
     }
     
     function serializeData()
     {
-      var data = "{";
+      var data = {};
       var id;
       
       // Shines
-      data = data + "\"shines\": [";
-      id = "";
+      data["shines"] = [];
       for (id in shineMap)
       {
-        data = data + "\"" + id + "\", ";
+        data["shines"].push(id);
       }
-      if (id !== "")
-        data = data.substring(0, data.length - 2); // Strip last ', '
-      data = data + "]";
       
       // Blue Coins
-      data = data + ", \"coins\": [";
-      id = "";
+      data["coins"] = [];
       for (id in bcMap)
       {
-        data = data + "\"" + id + "\", ";
+        data["coins"].push(id);
       }
-      if (id !== "")
-        data = data.substring(0, data.length - 2); // Strip last ', '
-      data = data + "]";
       
-      return data + "}";
+      return JSON.stringify(data);
+    }
+    
+    // Menu code    
+    var menu = document.getElementById("menu_div");
+    function showMenu()
+    {
+      var menuActive = !menu.classList.contains("nodisp");
+      if (menuActive)
+      {
+        menu.classList.add("nodisp");
+      }
+      else
+      {
+        menu.classList.remove("nodisp");
+      }
+    }
+    
+    document.addEventListener("click", hideMenu);;
+    function hideMenu(event)
+    {
+      if (!event || !event.target) { return; } // Sanity check
+      if (menu.classList.contains("nodisp")) { return; }
+      
+      var rect = menu.getBoundingClientRect();
+      
+      if (event.clientX > rect.right)
+        menu.classList.add("nodisp");
+    }
+    
+    // Utility functions
+    function clearAll()
+    {
+      var id, elem;
+      
+      for (id in shineMap)
+      {
+        elem = document.getElementById(id);
+        changeBackground({ target: elem });
+      }
+      for (id in bcMap)
+      {
+        elem = document.getElementById(id);
+        changeBCBackground({ target: elem });
+      }
     }
   </script>
 </html>
