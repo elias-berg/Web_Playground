@@ -1,253 +1,27 @@
 <html>
   <head>
-    <style>
-      body, td {
-        font-family: courier;
-        font-weight: 600;
-      }
-      
-      body {
-        background-image: url("img/background.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-      }
-      
-      .title {
-        text-align: center;
-        color: yellow;
-        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-      }
-      
-      h1 {
-        font-size: 32px;
-      }
-      
-      h2 {
-        font-size: 30px;
-      }
-      
-      #menu_div {
-        position: fixed;
-        width: 15%;
-        height: 100%;
-        background-color: teal;
-        opacity: 0.7;
-        z-index: 1;
-        top: 0;
-        left: 0;
-      }
-      
-      .nodisp {
-        display: none;
-      }
-      
-      .header-img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        top: -425;
-        left: -5;
-      }
-      
-      .shine {
-        background-image: url("img/shine.png");
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      
-      .bluecoin {
-        background-image: url("img/bluecoin.png");
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      
-      .hamburger {
-        background-image: url("img/fluddburger.png");
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      
-      #checklist {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        max-height: 1400px;
-      }
-      
-      .box {
-        background-color: yellow;
-        color: black;
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 20px;
-        margin-left: 10px;
-        margin-right: 10px;
-        box-shadow: 10px 10px rgba(0,0,0,0.3);
-      }
-      
-      .box:nth-child(n) {
-      }
-      
-      .box:nth-child(2n) {
-      }
-      
-      .box-title {
-        writing-mode: vertical-rl;
-        margin: 0;
-        border-right: 2px solid black;
-        text-align: center;
-        font-size: 28px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-right: 5px;
-        padding-left: 5px;
-      }
-      
-      .box-content {
-        margin: 0;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-right: 5px;
-        padding-left: 10px;
-        width: 400px;
-      }
-      
-      .check_table td {
-        padding-top: 5px;
-      }
-      
-      .rc {
-        width: 15px;
-        height: 15px;
-        padding-left: 12px;
-        display: inline-block;
-        vertical-align: top;
-        background-image: url("img/redcoin.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-      
-      .checkbox {
-        width: 20px;
-        height: 20px;
-        margin-right: 5px;
-        border: 1px solid black;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        background-color: lightgray;
-        box-shadow: -1px 1px grey;
-      }
-      
-      table {
-        border-collapse: collapse;
-      }
-      
-      #bc-table td {
-        padding: 10px;
-        text-align: center;
-        user-select: none;
-        min-width: 20px
-        white-space: pre;
-        background-size: contain;
-      }
-      
-      .hamburger-container {
-        position: fixed;
-        left: 10px;
-        border: none;
-        background-color: transparent;
-        opacity: 0.3;
-      }
-      
-      .hamburger-container:hover {
-        opacity: 1;
-      }
-      
-      .counters-container {
-        position: fixed;
-        right: 10px;
-        display: flex;
-      }
-      
-      .shine-counter {
-        border: 1px dotted black;
-        background-color: lightgray;
-        opacity: 0.7;
-      }
-      
-      .shine-counter:hover {
-        opacity: 1;
-        border: 1px solid black;
-        box-shadow: 10px 10px rgba(0,0,0,0.3);
-      }
-      
-      #counter {
-        text-align: right;
-        margin: 0;
-        padding: 0;
-        padding-right: 5px;
-        color: yellow;
-        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-      }
-      
-      .shine-counter + .blue-coin-counter {
-        margin-left: 10px;
-      }
-      
-      .blue-coin-counter {
-        border: 1px dotted black;
-        background-color: lightblue;
-        opacity: 0.7;
-      }
-      
-      .blue-coin-counter:hover {
-        opacity: 1;
-        border: 1px solid black;
-        box-shadow: 10px 10px rgba(0,0,0,0.3);
-      }
-      
-      #bc-counter {
-        text-align: right;
-        margin: 0;
-        padding: 0;
-        padding-right: 5px;
-        color: blue;
-        text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
-      }
-      
-      .bc-table {
-        margin-top: 10px;
-      }
-      
-      .bc-table td {
-        padding: 5px;
-        margin: 1px;
-        text-align: center;
-        user-select: none;
-      }
-      
-      .bc-table td div {
-        width: 20px;
-        height: 20px;
-        border: 1px solid black;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        background-color: lightblue;
-        box-shadow: -1px 1px grey;
-      }
-    </style>
+    <link rel="stylesheet" href="Checklist.css">
   </head>
   <body>
     <div class="shine header-img"></div>
   
     <div id="menu_div" class="nodisp">
-      <div class="menu_button" onclick="loadFile()">Load</div>
-      <div class="menu_button" onclick="saveFile()">Save</div>
+      <div class="menu_menu">
+        <p>Jump to...</p>
+        <div class="menu_button">Delfino Airstrip</div>
+        <div class="menu_button">Delfino Plaza</div>
+        <div class="menu_button">Bianco Hills</div>
+        <div class="menu_button">Ricco Harbour</div>
+        <div class="menu_button">Gelato Beach</div>
+        <div class="menu_button">Pinna Park</div>
+        <div class="menu_button">Sirena Beach</div>
+        <div class="menu_button">Noki Bay</div>
+        <div class="menu_button">Pianta Village</div>
+        <div class="menu_button">Corona Mountain</div>
+      </div>
+      <div class="separator"></div>
+      <div class="menu_button" onclick="loadFile()">Load Checklist</div>
+      <div class="menu_button" onclick="saveFile()">Save Checklist</div>
       <div id="file_anchors" class="nodisp">
         <input id="input_file" type="file" onchange="parseFile()" />
         <a download="sms.checklist" id="output_file" />
@@ -255,19 +29,18 @@
     </div>
   
     <div class="hamburger-container">
-      <div class="hamburger" style="height: 100px; width: 100px; background-size: contain;"
-        onclick="showMenu()">
+      <div class="hamburger" onclick="showMenu()">
       </div>
     </div>
   
     <div class="counters-container">
       <div class="shine-counter">
-        <div class="shine" style="height: 100px; width: 100px; background-size: contain;">
+        <div class="shine top-counter">
           <h2 id="counter">0</h2>
         </div>
       </div>
       <div class="blue-coin-counter">
-        <div class="bluecoin" style="height: 100px; width: 100px; background-size: contain;">
+        <div class="bluecoin top-counter">
           <h2 id="bc-counter">0</h2>
         </div>
       </div>
@@ -280,18 +53,20 @@
         
     <div id="checklist">
     
-      <div class="box">
+      <div id="da" class="box">
         <p class="box-title" style="font-size: 22px;">Airstrip</p>
         <div class="box-content">
           <table class="check_table">
             <tr><td><div id="da_1" class="checkbox"/></td><td>First Shine Of The Game</td></tr>
             <tr><td><div id="da_2" class="checkbox"/></td><td>Red Coin Challenge<div class="rc"/></td></tr>
           </table>
-          <table id="da_bc" class="bc-table" data-rows="1" data-cols="1"></table>
+          <table class="bc_table">
+            <tr><td><div id="da_bc1" class="bc_checkbox"/></td><td>Waiting Room Ice</td></tr>
+          </table>
         </div>
       </div>
       
-      <div class="box">
+      <div id="dp" class="box">
         <p class="box-title">Delfino Plaza</p>
         <div class="box-content">
           <table class="check_table">
@@ -313,7 +88,27 @@
             <tr><td><div id="dp_16" class="checkbox"/></td><td>Corona Mountain</td></tr>
             <tr><td><div id="dp_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
-          <table id="dp_bc" class="bc-table" data-rows="2" data-cols="9" data-extra="1"></table>
+          <table class="bc_table">
+            <tr><td><div id="dp_bc1" class="bc_checkbox"/></td><td>Jail</td></tr>
+            <tr><td><div id="dp_bc2" class="bc_checkbox"/></td><td>Banana Lady</td></tr>
+            <tr><td><div id="dp_bc3" class="bc_checkbox"/></td><td>Coconut Lady</td></tr>
+            <tr><td><div id="dp_bc4" class="bc_checkbox"/></td><td>Pineapple Lady</td></tr>
+            <tr><td><div id="dp_bc5" class="bc_checkbox"/></td><td>Durian Lady</td></tr>
+            <tr><td><div id="dp_bc6" class="bc_checkbox"/></td><td>Shine Gate M</td></tr>
+            <tr><td><div id="dp_bc7" class="bc_checkbox"/></td><td>Rooftop M</td></tr>
+            <tr><td><div id="dp_bc8" class="bc_checkbox"/></td><td>Tower M</td></tr>
+            <tr><td><div id="dp_bc9" class="bc_checkbox"/></td><td>Paired Cross - Pianta Statue</td></tr>
+            <tr><td><div id="dp_bc10" class="bc_checkbox"/></td><td>Paired Cross - Southwest Tower</td></tr>
+            <tr><td><div id="dp_bc11" class="bc_checkbox"/></td><td>Flaming Pianta</td></tr>
+            <tr><td><div id="dp_bc12" class="bc_checkbox"/></td><td>Blue Parrot 1</td></tr>
+            <tr><td><div id="dp_bc13" class="bc_checkbox"/></td><td>Blue Parrot 2</td></tr>
+            <tr><td><div id="dp_bc14" class="bc_checkbox"/></td><td>North Tunnel</td></tr>
+            <tr><td><div id="dp_bc15" class="bc_checkbox"/></td><td>Center Tunnel</td></tr>
+            <tr><td><div id="dp_bc16" class="bc_checkbox"/></td><td>West Tunnel</td></tr>
+            <tr><td><div id="dp_bc17" class="bc_checkbox"/></td><td>Northeast Tower Window</td></tr>
+            <tr><td><div id="dp_bc18" class="bc_checkbox"/></td><td>Northwest Tower Window</td></tr>
+            <tr><td><div id="dp_bc19" class="bc_checkbox"/></td><td>Sea Pillars</td></tr>
+          </table>
         </div>
       </div>
     
@@ -333,7 +128,38 @@
             <tr><td><div id="1_s2" class="checkbox"/></td><td>Episode 6<div class="rc"/></td></tr>
             <tr><td><div id="1_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
-          <table id="1_bc"  class="bc-table" data-rows="3" data-cols="10"></table>
+          <table class="bc_table">
+            <tr><td><div id="1_bc1" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc2" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc3" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc4" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc5" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc6" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc7" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc8" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc9" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc10" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc11" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc12" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc13" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc14" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc15" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc16" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc17" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc18" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc19" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc20" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc21" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc22" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc23" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc24" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc25" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc26" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc27" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc28" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc29" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="1_bc30" class="bc_checkbox"/></td><td></td></tr>
+          </table>
         </div>
       </div>
       
@@ -353,7 +179,38 @@
             <tr><td><div id="2_s2" class="checkbox"/></td><td>Episode 4<div class="rc"/></td></tr>
             <tr><td><div id="2_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
-          <table id="2_bc" class="bc-table" data-rows="3" data-cols="10"></table>
+          <table class="bc_table">
+            <tr><td><div id="2_bc1" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc2" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc3" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc4" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc5" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc6" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc7" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc8" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc9" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc10" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc11" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc12" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc13" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc14" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc15" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc16" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc17" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc18" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc19" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc20" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc21" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc22" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc23" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc24" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc25" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc26" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc27" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc28" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc29" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="2_bc30" class="bc_checkbox"/></td><td></td></tr>
+          </table>
         </div>
       </div>
       
@@ -373,7 +230,38 @@
             <tr><td><div id="3_s2" class="checkbox"/></td><td>Episode 1<div class="rc"/></td></tr>
             <tr><td><div id="3_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
-          <table id="3_bc" class="bc-table" data-rows="3" data-cols="10"></table>
+          <table class="bc_table">
+            <tr><td><div id="3_bc1" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc2" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc3" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc4" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc5" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc6" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc7" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc8" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc9" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc10" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc11" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc12" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc13" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc14" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc15" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc16" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc17" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc18" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc19" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc20" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc21" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc22" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc23" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc24" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc25" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc26" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc27" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc28" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc29" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="3_bc30" class="bc_checkbox"/></td><td></td></tr>
+          </table>
         </div>
       </div>
       
@@ -393,7 +281,38 @@
             <tr><td><div id="4_s2" class="checkbox"/></td><td>Episode 6<div class="rc"/></td></tr>
             <tr><td><div id="4_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
-          <table id="4_bc" class="bc-table" data-rows="3" data-cols="10"></table>
+          <table class="bc_table">
+            <tr><td><div id="4_bc1" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc2" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc3" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc4" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc5" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc6" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc7" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc8" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc9" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc10" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc11" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc12" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc13" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc14" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc15" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc16" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc17" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc18" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc19" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc20" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc21" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc22" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc23" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc24" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc25" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc26" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc27" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc28" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc29" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="4_bc30" class="bc_checkbox"/></td><td></td></tr>
+          </table>
         </div>
       </div>
       
@@ -413,7 +332,38 @@
             <tr><td><div id="5_s2" class="checkbox"/></td><td>Episode 4<div class="rc"/></td></tr>
             <tr><td><div id="5_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
-          <table id="5_bc" class="bc-table" data-rows="3" data-cols="10"></table>
+          <table class="bc_table">
+            <tr><td><div id="5_bc1" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc2" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc3" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc4" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc5" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc6" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc7" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc8" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc9" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc10" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc11" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc12" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc13" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc14" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc15" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc16" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc17" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc18" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc19" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc20" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc21" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc22" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc23" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc24" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc25" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc26" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc27" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc28" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc29" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="5_bc30" class="bc_checkbox"/></td><td></td></tr>
+          </table>
         </div>
       </div>
       
@@ -433,7 +383,38 @@
             <tr><td><div id="6_s2" class="checkbox"/></td><td>Episode 6<div class="rc"/></td></tr>
             <tr><td><div id="6_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
-          <table id="6_bc" class="bc-table" data-rows="3" data-cols="10"></table>
+          <table class="bc_table">
+            <tr><td><div id="6_bc1" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc2" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc3" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc4" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc5" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc6" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc7" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc8" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc9" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc10" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc11" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc12" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc13" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc14" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc15" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc16" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc17" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc18" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc19" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc20" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc21" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc22" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc23" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc24" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc25" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc26" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc27" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc28" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc29" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="6_bc30" class="bc_checkbox"/></td><td></td></tr>
+          </table>
         </div>
       </div>
 
@@ -453,7 +434,59 @@
             <tr><td><div id="7_s2" class="checkbox"/></td><td>Episode 8 - Spray the sun from the center tree</td></tr>
             <tr><td><div id="7_100" class="checkbox"/></td><td>100 Coins</td></tr>
           </table>
-          <table id="7_bc" class="bc-table" data-rows="3" data-cols="10"></table>
+          <table class="bc_table">
+            <tr><td><div id="7_bc1" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc2" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc3" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc4" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc5" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc6" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc7" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc8" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc9" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc10" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc11" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc12" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc13" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc14" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc15" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc16" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc17" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc18" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc19" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc20" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc21" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc22" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc23" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc24" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc25" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc26" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc27" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc28" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc29" class="bc_checkbox"/></td><td></td></tr>
+            <tr><td><div id="7_bc30" class="bc_checkbox"/></td><td></td></tr>
+          </table>
+        </div>
+      </div>
+      
+      <div class="box">
+        <p class="box-title">Corona Mountain</p>
+        <div class="box-content">
+          <table class="check_table">
+            <tr><td><div id="c_1" class="checkbox"/></td><td>Final Boss</td></tr>
+          </table>
+          <table class="bc_table">
+            <tr><td><div id="c_bc1" class="bc_checkbox"/></td><td>Platform</td></tr>
+            <tr><td><div id="c_bc2" class="bc_checkbox"/></td><td>Lava Coin 1</td></tr>
+            <tr><td><div id="c_bc3" class="bc_checkbox"/></td><td>Lava Coin 2</td></tr>
+            <tr><td><div id="c_bc4" class="bc_checkbox"/></td><td>Lava Coin 3</td></tr>
+            <tr><td><div id="c_bc5" class="bc_checkbox"/></td><td>Lava Coin 4</td></tr>
+            <tr><td><div id="c_bc6" class="bc_checkbox"/></td><td>Lava Coin 5</td></tr>
+            <tr><td><div id="c_bc7" class="bc_checkbox"/></td><td>Lava Coin 6</td></tr>
+            <tr><td><div id="c_bc8" class="bc_checkbox"/></td><td>Lava Coin 7</td></tr>
+            <tr><td><div id="c_bc9" class="bc_checkbox"/></td><td>Lava Coin 8</td></tr>
+            <tr><td><div id="c_bc10" class="bc_checkbox"/></td><td>Lava Coin 9</td></tr>
+          </table>
         </div>
       </div>
       
@@ -465,38 +498,10 @@
     var bcCtl = document.getElementById("bc-counter");
     var bcCnt = 0;
     
-    var bcTables = document.getElementsByClassName("bc-table");
-    for (var idx in bcTables)
+    var bcCheckboxes = document.getElementsByClassName("bc_checkbox");
+    for (var i = 0; i < bcCheckboxes.length; i++)
     {
-      var bcTable = bcTables[idx];
-      if (!bcTable) continue;
-      createBCTable(bcTable);
-    }
-    
-    function createBCTable(table)
-    {
-      if (!table) return;
-      if (!table.dataset) return;
-      
-      var rows = table.dataset.rows;
-      var cols = table.dataset.cols;
-    
-      for (var i = 0; i < rows; i++)
-      {
-        var row = document.createElement("tr");
-        table.appendChild(row);
-        for (var j = 0; j < cols; j++)
-        {
-          var cell = document.createElement("td");
-          var id = (j+1)+(i*cols);
-          var div = document.createElement("div");
-          cell.appendChild(div);
-          div.id = table.id + "_" + id;
-          div.addEventListener("click", changeBCBackground);
-          row.appendChild(cell);
-        }
-      }
-      
+      bcCheckboxes[i].addEventListener("click", changeBCBackground);
     }
     
     bcMap = {};

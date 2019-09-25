@@ -1,0 +1,270 @@
+body, td {
+  font-family: courier;
+  font-weight: 600;
+}
+
+body {
+  background-image: url("img/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.title {
+  text-align: center;
+  color: yellow;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.nodisp {
+  display: none;
+}
+
+.header-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: -425;
+  left: -5;
+}
+
+.shine {
+  background-image: url("img/shine.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bluecoin {
+  background-image: url("img/bluecoin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.box {
+  background-color: yellow;
+  opacity: 0.9;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 10px 10px rgba(0,0,0,0.3);
+}
+
+.box:nth-child(n) {
+}
+
+.box:nth-child(2n) {
+}
+
+.box-title {
+  writing-mode: vertical-rl;
+  margin: 0;
+  border-right: 2px solid black;
+  text-align: center;
+  font-size: 28px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.box-content {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 10px;
+  width: 400px;
+}
+
+/* Menu */
+
+.hamburger {
+  height: 80px;
+  width: 80px;
+  background-size: contain;
+  background-image: url("img/fluddburger.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hamburger-container {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  border: none;
+  background-color: transparent;
+  opacity: 0.3;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.hamburger-container:hover {
+  opacity: 1;
+}
+
+#menu_div {
+  position: fixed;
+  width: 15%;
+  height: 100%;
+  background-color: turquoise;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.separator {
+  border-bottom: 2px solid black;
+  margin-top: 15px;
+  margin-bottom: 13px;
+}
+
+.menu_menu > p {
+  padding-left: 10px;
+  font-size: 22px;
+  margin: 10px;
+}
+
+.menu_button {
+  width: 200px;
+  margin: auto;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+  border: 2px dotted black;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.menu_button:hover {
+  border-style: solid;
+}
+
+.menu_button + .menu_button {
+  margin-top: 20px;
+}
+
+/* Counters */
+
+.counters-container {
+  position: fixed;
+  right: 10px;
+  display: flex;
+  z-index: 1;
+}
+
+.top-counter {
+  height: 100px;
+  width: 100px;
+  background-size: contain;
+}
+
+.shine-counter {
+  border: 1px dotted black;
+  background-color: floralwhite;
+  opacity: 0.7;
+}
+
+.shine-counter:hover {
+  opacity: 1;
+  border: 1px solid black;
+  box-shadow: 10px 10px rgba(0,0,0,0.3);
+}
+
+.shine-counter + .blue-coin-counter {
+  margin-left: 10px;
+}
+
+.blue-coin-counter {
+  border: 1px dotted black;
+  background-color: floralwhite;
+  opacity: 0.7;
+}
+
+.blue-coin-counter:hover {
+  opacity: 1;
+  border: 1px solid black;
+  box-shadow: 10px 10px rgba(0,0,0,0.3);
+}
+
+#counter {
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  padding-right: 5px;
+  color: yellow;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+#bc-counter {
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  padding-right: 5px;
+  color: blue;
+  text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+
+/* Tables */
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding-top: 5px;
+}
+
+.check_table + .bc_table {
+  margin-top: 5px;
+}
+
+.rc {
+  width: 15px;
+  height: 15px;
+  padding-left: 12px;
+  display: inline-block;
+  vertical-align: top;
+  background-image: url("img/redcoin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 1px solid black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: lightgray;
+  box-shadow: -1px 1px grey;
+  cursor: pointer;
+}
+
+.bc_checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 1px solid black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: lightblue;
+  box-shadow: -1px 1px grey;
+  cursor: pointer;
+}
