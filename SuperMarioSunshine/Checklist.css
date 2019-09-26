@@ -61,12 +61,6 @@ h2 {
   box-shadow: 10px 10px rgba(0,0,0,0.3);
 }
 
-.box:nth-child(n) {
-}
-
-.box:nth-child(2n) {
-}
-
 .box-title {
   writing-mode: vertical-rl;
   margin: 0;
@@ -116,7 +110,7 @@ h2 {
 
 #menu_div {
   position: fixed;
-  width: 15%;
+  width: 250px;
   height: 100%;
   background-color: turquoise;
   z-index: 2;
@@ -139,12 +133,12 @@ h2 {
 .menu_button {
   width: 200px;
   margin: auto;
-  height: 50px;
+  height: 45px;
   text-align: center;
   vertical-align: middle;
   font-size: 18px;
   border: 2px dotted black;
-  line-height: 50px;
+  line-height: 45px;
   cursor: pointer;
 }
 
@@ -153,7 +147,7 @@ h2 {
 }
 
 .menu_button + .menu_button {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* Counters */
@@ -215,6 +209,10 @@ h2 {
   padding-right: 5px;
   color: blue;
   text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+
+.ep {
+  display: inline;
 }
 
 /* Tables */
