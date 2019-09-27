@@ -73,26 +73,13 @@ function goTo(id)
   var elem = document.getElementById(id);
   if (!elem) { return; }
   
-  elem.scrollIntoView();
+  elem.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
 
   if (!menu.classList.contains("nodisp"))
     menu.classList.add("nodisp");
-}
-
-function cb(elem, image, counter, cnt, map)
-{
-  if (!elem.style.backgroundImage)
-  {
-    elem.style.backgroundImage = image;
-    counter.innerText = ++cnt;
-    map[elem.id] = 1;
-  }
-  else
-  {
-    elem.style.backgroundImage = '';
-    counter.innerText = --cnt;
-    delete map[elem.id];
-  }
 }
 
 // Shine Checkboxes

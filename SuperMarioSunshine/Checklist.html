@@ -4,6 +4,7 @@
     <script type="text/javascript" src="Checklist.js"></script>
   </head>
   <body>
+    <div class="background"></div>
     <div class="shine header-img"></div>
   
     <div id="menu_div" class="nodisp">
@@ -25,7 +26,7 @@
       <div class="menu_button" onclick="saveFile()">Save Checklist</div>
       <div id="file_anchors" class="nodisp">
         <input id="input_file" type="file" onchange="parseFile()" />
-        <a download="sms.checklist" id="output_file" />
+        <a download="sms.checklist" id="output_file"></a>
       </div>
     </div>
   
@@ -57,447 +58,447 @@
       <div id="da" class="box">
         <p class="box-title" style="font-size: 22px;">Airstrip</p>
         <div class="box-content">
-          <table class="check_table">
-            <tr><td><div id="da_1" class="checkbox"/></td><td>First Shine Of The Game</td></tr>
-            <tr><td><div id="da_2" class="checkbox"/></td><td>Red Coin Challenge<div class="rc"/></td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="da_1" class="checkbox"></div><div class="check_text">First Shine Of The Game</div></div>
+            <div class="check_row"><div id="da_2" class="checkbox"></div><div class="check_text">Red Coin Challenge<div class="rc"></div></div></div>
+          </div>
           <div class="separator"></div>
-          <table class="bc_table">
-            <tr><td><div id="da_bc1" class="bc_checkbox"/></td><td>Waiting Room Ice</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="da_bc1" class="bc_checkbox"></div><div class="check_text">Waiting Room Ice</div></div>
+          </div>
         </div>
       </div>
       
       <div id="dp" class="box">
         <p class="box-title">Delfino Plaza</p>
         <div class="box-content">
-          <table class="check_table">
-            <tr><td><div id="dp_1" class="checkbox"/></td><td>Lighthouse Shine Symbol</td></tr>
-            <tr><td><div id="dp_2" class="checkbox"/></td><td>Water Pillars Pipe Challenge</td></tr>
-            <tr><td><div id="dp_3" class="checkbox"/></td><td>Crate Stomping 1</td></tr>
-            <tr><td><div id="dp_4" class="checkbox"/></td><td>Crate Stomping 2</td></tr>
-            <tr><td><div id="dp_5" class="checkbox"/></td><td>Pianta Launch</td></tr>
-            <tr><td><div id="dp_6" class="checkbox"/></td><td>Island Gold Bird</td></tr>
-            <tr><td><div id="dp_7" class="checkbox"/></td><td>Under the Bridge Challenge<div class="rc"/></td></tr>
-            <tr><td><div id="dp_8" class="checkbox"/></td><td>Fire Pipe Challenge<div class="rc"/></td></tr>
-            <tr><td><div id="dp_9" class="checkbox"/></td><td>West Door Turbo Nozzle</td></tr>
-            <tr><td><div id="dp_10" class="checkbox"/></td><td>Police Door Challenge</td></tr>
-            <tr><td><div id="dp_11" class="checkbox"/></td><td>High Point Pipe Challenge<div class="rc"/></td></tr>
-            <tr><td><div id="dp_12" class="checkbox"/></td><td>Western Bell Tower Cleaning</td></tr>
-            <tr><td><div id="dp_13" class="checkbox"/></td><td>Eastern Bell Tower Cleaning</td></tr>
-            <tr><td><div id="dp_14" class="checkbox"/></td><td>Shine Gate Cleaning</td></tr>
-            <tr><td><div id="dp_15" class="checkbox"/></td><td>Lighthouse Butt Stomp</td></tr>
-            <tr><td><div id="dp_16" class="checkbox"/></td><td>Corona Mountain</td></tr>
-            <tr><td><div id="dp_100" class="checkbox"/></td><td>100 Coins</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="dp_1" class="checkbox"></div><div class="check_text">Lighthouse Shine Symbol</div></div>
+            <div class="check_row"><div id="dp_2" class="checkbox"></div><div class="check_text">Water Pillars Pipe Challenge</div></div>
+            <div class="check_row"><div id="dp_3" class="checkbox"></div><div class="check_text">Crate Stomping 1</div></div>
+            <div class="check_row"><div id="dp_4" class="checkbox"></div><div class="check_text">Crate Stomping 2</div></div>
+            <div class="check_row"><div id="dp_5" class="checkbox"></div><div class="check_text">Pianta Launch</div></div>
+            <div class="check_row"><div id="dp_6" class="checkbox"></div><div class="check_text">Island Gold Bird</div></div>
+            <div class="check_row"><div id="dp_7" class="checkbox"></div><div class="check_text">Under the Bridge Challenge<div class="rc"></div></div></div>
+            <div class="check_row"><div id="dp_8" class="checkbox"></div><div class="check_text">Fire Pipe Challenge<div class="rc"></div></div></div>
+            <div class="check_row"><div id="dp_9" class="checkbox"></div><div class="check_text">West Door Turbo Nozzle</div></div>
+            <div class="check_row"><div id="dp_10" class="checkbox"></div><div class="check_text">Police Door Challenge</div></div>
+            <div class="check_row"><div id="dp_11" class="checkbox"></div><div class="check_text">High Point Pipe Challenge<div class="rc"></div></div></div>
+            <div class="check_row"><div id="dp_12" class="checkbox"></div><div class="check_text">Western Bell Tower Cleaning</div></div>
+            <div class="check_row"><div id="dp_13" class="checkbox"></div><div class="check_text">Eastern Bell Tower Cleaning</div></div>
+            <div class="check_row"><div id="dp_14" class="checkbox"></div><div class="check_text">Shine Gate Cleaning</div></div>
+            <div class="check_row"><div id="dp_15" class="checkbox"></div><div class="check_text">Lighthouse Butt Stomp</div></div>
+            <div class="check_row"><div id="dp_16" class="checkbox"></div><div class="check_text">Corona Mountain</div></div>
+            <div class="check_row"><div id="dp_100" class="checkbox"></div><div class="check_text">100 Coins</div></div>
+          </div>
           <div class="separator"></div>
-          <table class="bc_table">
-            <tr><td><div id="dp_bc1" class="bc_checkbox"/></td><td>Jail</td></tr>
-            <tr><td><div id="dp_bc2" class="bc_checkbox"/></td><td>Banana Lady</td></tr>
-            <tr><td><div id="dp_bc3" class="bc_checkbox"/></td><td>Coconut Lady</td></tr>
-            <tr><td><div id="dp_bc4" class="bc_checkbox"/></td><td>Pineapple Lady</td></tr>
-            <tr><td><div id="dp_bc5" class="bc_checkbox"/></td><td>Durian Lady</td></tr>
-            <tr><td><div id="dp_bc6" class="bc_checkbox"/></td><td>Shine Gate M</td></tr>
-            <tr><td><div id="dp_bc7" class="bc_checkbox"/></td><td>Rooftop M</td></tr>
-            <tr><td><div id="dp_bc8" class="bc_checkbox"/></td><td>Tower M</td></tr>
-            <tr><td><div id="dp_bc9" class="bc_checkbox"/></td><td>Paired Cross - Pianta Statue</td></tr>
-            <tr><td><div id="dp_bc10" class="bc_checkbox"/></td><td>Paired Cross - Southwest Tower</td></tr>
-            <tr><td><div id="dp_bc11" class="bc_checkbox"/></td><td>Spray Flaming Pianta</td></tr>
-            <tr><td><div id="dp_bc12" class="bc_checkbox"/></td><td>Blue Parrot 1</td></tr>
-            <tr><td><div id="dp_bc13" class="bc_checkbox"/></td><td>Blue Parrot 2</td></tr>
-            <tr><td><div id="dp_bc14" class="bc_checkbox"/></td><td>North Tunnel</td></tr>
-            <tr><td><div id="dp_bc15" class="bc_checkbox"/></td><td>Center Tunnel</td></tr>
-            <tr><td><div id="dp_bc16" class="bc_checkbox"/></td><td>West Tunnel</td></tr>
-            <tr><td><div id="dp_bc17" class="bc_checkbox"/></td><td>Northeast Tower Window</td></tr>
-            <tr><td><div id="dp_bc18" class="bc_checkbox"/></td><td>Northwest Tower Window</td></tr>
-            <tr><td><div id="dp_bc19" class="bc_checkbox"/></td><td>Sea Pillars</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="dp_bc1" class="bc_checkbox"></div><div class="check_text">Jail</div></div>
+            <div class="check_row"><div id="dp_bc2" class="bc_checkbox"></div><div class="check_text">Banana Lady</div></div>
+            <div class="check_row"><div id="dp_bc3" class="bc_checkbox"></div><div class="check_text">Coconut Lady</div></div>
+            <div class="check_row"><div id="dp_bc4" class="bc_checkbox"></div><div class="check_text">Pineapple Lady</div></div>
+            <div class="check_row"><div id="dp_bc5" class="bc_checkbox"></div><div class="check_text">Durian Lady</div></div>
+            <div class="check_row"><div id="dp_bc6" class="bc_checkbox"></div><div class="check_text">Shine Gate M</div></div>
+            <div class="check_row"><div id="dp_bc7" class="bc_checkbox"></div><div class="check_text">Rooftop M</div></div>
+            <div class="check_row"><div id="dp_bc8" class="bc_checkbox"></div><div class="check_text">Tower M</div></div>
+            <div class="check_row"><div id="dp_bc9" class="bc_checkbox"></div><div class="check_text">Paired Cross - Pianta Statue</div></div>
+            <div class="check_row"><div id="dp_bc10" class="bc_checkbox"></div><div class="check_text">Paired Cross - Southwest Tower</div></div>
+            <div class="check_row"><div id="dp_bc11" class="bc_checkbox"></div><div class="check_text">Spray Flaming Pianta</div></div>
+            <div class="check_row"><div id="dp_bc12" class="bc_checkbox"></div><div class="check_text">Blue Parrot 1</div></div>
+            <div class="check_row"><div id="dp_bc13" class="bc_checkbox"></div><div class="check_text">Blue Parrot 2</div></div>
+            <div class="check_row"><div id="dp_bc14" class="bc_checkbox"></div><div class="check_text">North Tunnel</div></div>
+            <div class="check_row"><div id="dp_bc15" class="bc_checkbox"></div><div class="check_text">Center Tunnel</div></div>
+            <div class="check_row"><div id="dp_bc16" class="bc_checkbox"></div><div class="check_text">West Tunnel</div></div>
+            <div class="check_row"><div id="dp_bc17" class="bc_checkbox"></div><div class="check_text">Northeast Tower Window</div></div>
+            <div class="check_row"><div id="dp_bc18" class="bc_checkbox"></div><div class="check_text">Northwest Tower Window</div></div>
+            <div class="check_row"><div id="dp_bc19" class="bc_checkbox"></div><div class="check_text">Sea Pillars</div></div>
+          </div>
         </div>
       </div>
     
       <div id="bh" class="box">
         <p class="box-title">Bianco Hills</p>
         <div class="box-content">
-          <table class="check_table">
-            <tr><td><div id="bh_1" class="checkbox"/></td><td>Road To The Big Windmill</td></tr>
-            <tr><td><div id="bh_2" class="checkbox"/></td><td>Down With Petey Piranha</td></tr>
-            <tr><td><div id="bh_3" class="checkbox"/></td><td>The Hillside Cave Secret</td></tr>
-            <tr><td><div id="bh_4" class="checkbox"/></td><td>Red Coins Of Windmill Village</td></tr>
-            <tr><td><div id="bh_5" class="checkbox"/></td><td>Petey Piranha Strikes Back</td></tr>
-            <tr><td><div id="bh_6" class="checkbox"/></td><td>The Secret Of The Dirty Lake</td></tr>
-            <tr><td><div id="bh_7" class="checkbox"/></td><td>Shadow Mario On The Loose</td></tr>
-            <tr><td><div id="bh_8" class="checkbox"/></td><td>The Red Coins Of The Lake</td></tr>
-            <tr><td><div id="bh_s1" class="checkbox"/></td><td>Episode 3<div class="rc"/></td></tr>
-            <tr><td><div id="bh_s2" class="checkbox"/></td><td>Episode 6<div class="rc"/></td></tr>
-            <tr><td><div id="bh_100" class="checkbox"/></td><td>100 Coins</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="bh_1" class="checkbox"></div><div class="check_text">Road To The Big Windmill</div></div>
+            <div class="check_row"><div id="bh_2" class="checkbox"></div><div class="check_text">Down With Petey Piranha</div></div>
+            <div class="check_row"><div id="bh_3" class="checkbox"></div><div class="check_text">The Hillside Cave Secret</div></div>
+            <div class="check_row"><div id="bh_4" class="checkbox"></div><div class="check_text">Red Coins Of Windmill Village</div></div>
+            <div class="check_row"><div id="bh_5" class="checkbox"></div><div class="check_text">Petey Piranha Strikes Back</div></div>
+            <div class="check_row"><div id="bh_6" class="checkbox"></div><div class="check_text">The Secret Of The Dirty Lake</div></div>
+            <div class="check_row"><div id="bh_7" class="checkbox"></div><div class="check_text">Shadow Mario On The Loose</div></div>
+            <div class="check_row"><div id="bh_8" class="checkbox"></div><div class="check_text">The Red Coins Of The Lake</div></div>
+            <div class="check_row"><div id="bh_s1" class="checkbox"></div><div class="check_text">Episode 3<div class="rc"></div></div></div>
+            <div class="check_row"><div id="bh_s2" class="checkbox"></div><div class="check_text">Episode 6<div class="rc"></div></div></div>
+            <div class="check_row"><div id="bh_100" class="checkbox"></div><div class="check_text">100 Coins</div></div>
+          </div>
           <div class="separator"></div>
-          <table class="bc_table">
-            <tr><td><div id="bh_bc1" class="bc_checkbox"/></td><td>Stream</td></tr>
-            <tr><td><div id="bh_bc2" class="bc_checkbox"/></td><td>North Lake</td></tr>
-            <tr><td><div id="bh_bc3" class="bc_checkbox"/></td><td>South Lake</td></tr>
-            <tr><td><div id="bh_bc4" class="bc_checkbox"/></td><td>Windmill Ledge</td></tr>
-            <tr><td><div id="bh_bc5" class="bc_checkbox"/></td><td>Two Towers</td></tr>
-            <tr><td><div id="bh_bc6" class="bc_checkbox"/></td><td>West Cliff (Episode 3+)</td></tr>
-            <tr><td><div id="bh_bc7" class="bc_checkbox"/></td><td>Cliff Platform (Episode 5+)</td></tr>
-            <tr><td><div id="bh_bc8" class="bc_checkbox"/></td><td>Under Bridge (Episode 4+)</td></tr>
-            <tr><td><div id="bh_bc9" class="bc_checkbox"/></td><td>Village Mini-Windmill (Episode 6+)</td></tr>
-            <tr><td><div id="bh_bc10" class="bc_checkbox"/></td><td>Lake Mini-Windmill (Episode 3+)</td></tr>
-            <tr><td><div id="bh_bc11" class="bc_checkbox"/></td><td>Water Wheel Wall M</td></tr>
-            <tr><td><div id="bh_bc12" class="bc_checkbox"/></td><td>Water Wheel Wall Top M</td></tr>
-            <tr><td><div id="bh_bc13" class="bc_checkbox"/></td><td>Two Towers House M</td></tr>
-            <tr><td><div id="bh_bc14" class="bc_checkbox"/></td><td>Paired Cross - Wall</td></tr>
-            <tr><td><div id="bh_bc15" class="bc_checkbox"/></td><td>Paired Cross - Well</td></tr>
-            <tr><td><div id="bh_bc16" class="bc_checkbox"/></td><td>Windmill M</td></tr>
-            <tr><td><div id="bh_bc17" class="bc_checkbox"/></td><td>Paired Circle - Two Towers House (Episode 7+)</td></tr>
-            <tr><td><div id="bh_bc18" class="bc_checkbox"/></td><td>Paired Circle - Windmill House (Episode 7+)</td></tr>
-            <tr><td><div id="bh_bc19" class="bc_checkbox"/></td><td>Spray Balcony Door</td></tr>
-            <tr><td><div id="bh_bc20" class="bc_checkbox"/></td><td>Spray Water Wheel Tree (Episode 3+)</td></tr>
-            <tr><td><div id="bh_bc21" class="bc_checkbox"/></td><td>Spray River Mini-Windmill</td></tr>
-            <tr><td><div id="bh_bc22" class="bc_checkbox"/></td><td>Spray Lake Spire</td></tr>
-            <tr><td><div id="bh_bc23" class="bc_checkbox"/></td><td>Spray Gorge Spire (Episode 6+)</td></tr>
-            <tr><td><div id="bh_bc24" class="bc_checkbox"/></td><td>Blue Parrot (Episode 6+)</td></tr>
-            <tr><td><div id="bh_bc25" class="bc_checkbox"/></td><td>Spray Goopy Pianta Wearing Brown</td></tr>
-            <tr><td><div id="bh_bc26" class="bc_checkbox"/></td><td>Spray Goopy Pianta Wearing Black (Episode 5+)</td></tr>
-            <tr><td><div id="bh_bc27" class="bc_checkbox"/></td><td>Defeat Windmill Pokey (Episode 3+)</td></tr>
-            <tr><td><div id="bh_bc28" class="bc_checkbox"/></td><td>Defeat Ledge Pokey<label class="ep">4</label></td></tr>
-            <tr><td><div id="bh_bc29" class="bc_checkbox"/></td><td>Eat Blue Butterflies<label class="ep">8</label></td></tr>
-            <tr><td><div id="bh_bc30" class="bc_checkbox"/></td><td>Eat Lake Beehive Bees<label class="ep">8</label></td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="bh_bc1" class="bc_checkbox"></div><div class="check_text">Stream</div></div>
+            <div class="check_row"><div id="bh_bc2" class="bc_checkbox"></div><div class="check_text">North Lake</div></div>
+            <div class="check_row"><div id="bh_bc3" class="bc_checkbox"></div><div class="check_text">South Lake</div></div>
+            <div class="check_row"><div id="bh_bc4" class="bc_checkbox"></div><div class="check_text">Windmill Ledge</div></div>
+            <div class="check_row"><div id="bh_bc5" class="bc_checkbox"></div><div class="check_text">Two Towers</div></div>
+            <div class="check_row"><div id="bh_bc6" class="bc_checkbox"></div><div class="check_text">West Cliff (Episode 3+)</div></div>
+            <div class="check_row"><div id="bh_bc7" class="bc_checkbox"></div><div class="check_text">Cliff Platform (Episode 5+)</div></div>
+            <div class="check_row"><div id="bh_bc8" class="bc_checkbox"></div><div class="check_text">Under Bridge (Episode 4+)</div></div>
+            <div class="check_row"><div id="bh_bc9" class="bc_checkbox"></div><div class="check_text">Village Mini-Windmill (Episode 6+)</div></div>
+            <div class="check_row"><div id="bh_bc10" class="bc_checkbox"></div><div class="check_text">Lake Mini-Windmill (Episode 3+)</div></div>
+            <div class="check_row"><div id="bh_bc11" class="bc_checkbox"></div><div class="check_text">Water Wheel Wall M</div></div>
+            <div class="check_row"><div id="bh_bc12" class="bc_checkbox"></div><div class="check_text">Water Wheel Wall Top M</div></div>
+            <div class="check_row"><div id="bh_bc13" class="bc_checkbox"></div><div class="check_text">Two Towers House M</div></div>
+            <div class="check_row"><div id="bh_bc14" class="bc_checkbox"></div><div class="check_text">Paired Cross - Wall</div></div>
+            <div class="check_row"><div id="bh_bc15" class="bc_checkbox"></div><div class="check_text">Paired Cross - Well</div></div>
+            <div class="check_row"><div id="bh_bc16" class="bc_checkbox"></div><div class="check_text">Windmill M</div></div>
+            <div class="check_row"><div id="bh_bc17" class="bc_checkbox"></div><div class="check_text">Paired Circle - Two Towers House (Episode 7+)</div></div>
+            <div class="check_row"><div id="bh_bc18" class="bc_checkbox"></div><div class="check_text">Paired Circle - Windmill House (Episode 7+)</div></div>
+            <div class="check_row"><div id="bh_bc19" class="bc_checkbox"></div><div class="check_text">Spray Balcony Door</div></div>
+            <div class="check_row"><div id="bh_bc20" class="bc_checkbox"></div><div class="check_text">Spray Water Wheel Tree (Episode 3+)</div></div>
+            <div class="check_row"><div id="bh_bc21" class="bc_checkbox"></div><div class="check_text">Spray River Mini-Windmill</div></div>
+            <div class="check_row"><div id="bh_bc22" class="bc_checkbox"></div><div class="check_text">Spray Lake Spire</div></div>
+            <div class="check_row"><div id="bh_bc23" class="bc_checkbox"></div><div class="check_text">Spray Gorge Spire (Episode 6+)</div></div>
+            <div class="check_row"><div id="bh_bc24" class="bc_checkbox"></div><div class="check_text">Blue Parrot (Episode 6+)</div></div>
+            <div class="check_row"><div id="bh_bc25" class="bc_checkbox"></div><div class="check_text">Spray Goopy Pianta Wearing Brown</div></div>
+            <div class="check_row"><div id="bh_bc26" class="bc_checkbox"></div><div class="check_text">Spray Goopy Pianta Wearing Black (Episode 5+)</div></div>
+            <div class="check_row"><div id="bh_bc27" class="bc_checkbox"></div><div class="check_text">Defeat Windmill Pokey (Episode 3+)</div></div>
+            <div class="check_row"><div id="bh_bc28" class="bc_checkbox"></div><div class="check_text">Defeat Ledge Pokey<label class="ep">4</label></div></div>
+            <div class="check_row"><div id="bh_bc29" class="bc_checkbox"></div><div class="check_text">Eat Blue Butterflies<label class="ep">8</label></div></div>
+            <div class="check_row"><div id="bh_bc30" class="bc_checkbox"></div><div class="check_text">Eat Lake Beehive Bees<label class="ep">8</label></div></div>
+          </div>
         </div>
       </div>
       
       <div id="rh" class="box">
         <p class="box-title">Ricco Harbour</p>
         <div class="box-content">
-          <table class="check_table">
-            <tr><td><div id="rh_1" class="checkbox"/></td><td>Gooper Blooper Breaks Out</td></tr>
-            <tr><td><div id="rh_2" class="checkbox"/></td><td>Blooper Surfing Safari</td></tr>
-            <tr><td><div id="rh_3" class="checkbox"/></td><td>The Caged Shine Sprite</td></tr>
-            <tr><td><div id="rh_4" class="checkbox"/></td><td>The Secret Of Ricco Tower</td></tr>
-            <tr><td><div id="rh_5" class="checkbox"/></td><td>Glooper Blooper Returns</td></tr>
-            <tr><td><div id="rh_6" class="checkbox"/></td><td>Red Coins In The Water</td></tr>
-            <tr><td><div id="rh_7" class="checkbox"/></td><td>Shadow Mario Revisited</td></tr>
-            <tr><td><div id="rh_8" class="checkbox"/></td><td>Yoshi's Fruit Adventure</td></tr>
-            <tr><td><div id="rh_s1" class="checkbox"/></td><td>Episode 2 - Blooper Surfing Safari (under 40 seconds)</td></tr>
-            <tr><td><div id="rh_s2" class="checkbox"/></td><td>Episode 4<div class="rc"/></td></tr>
-            <tr><td><div id="rh_100" class="checkbox"/></td><td>100 Coins</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="rh_1" class="checkbox"></div><div class="check_text">Gooper Blooper Breaks Out</div></div>
+            <div class="check_row"><div id="rh_2" class="checkbox"></div><div class="check_text">Blooper Surfing Safari</div></div>
+            <div class="check_row"><div id="rh_3" class="checkbox"></div><div class="check_text">The Caged Shine Sprite</div></div>
+            <div class="check_row"><div id="rh_4" class="checkbox"></div><div class="check_text">The Secret Of Ricco Tower</div></div>
+            <div class="check_row"><div id="rh_5" class="checkbox"></div><div class="check_text">Glooper Blooper Returns</div></div>
+            <div class="check_row"><div id="rh_6" class="checkbox"></div><div class="check_text">Red Coins In The Water</div></div>
+            <div class="check_row"><div id="rh_7" class="checkbox"></div><div class="check_text">Shadow Mario Revisited</div></div>
+            <div class="check_row"><div id="rh_8" class="checkbox"></div><div class="check_text">Yoshi's Fruit Adventure</div></div>
+            <div class="check_row"><div id="rh_s1" class="checkbox"></div><div class="check_text">Episode 2 - Blooper Surfing Safari (under 40 seconds)</div></div>
+            <div class="check_row"><div id="rh_s2" class="checkbox"></div><div class="check_text">Episode 4<div class="rc"></div></div></div>
+            <div class="check_row"><div id="rh_100" class="checkbox"></div><div class="check_text">100 Coins</div></div>
+          </div>
           <div class="separator"></div>
-          <table class="bc_table">
-            <tr><td><div id="rh_bc1" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc2" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc3" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc4" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc5" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc6" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc7" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc8" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc9" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc10" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc11" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc12" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc13" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc14" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc15" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc16" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc17" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc18" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc19" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc20" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc21" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc22" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc23" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc24" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc25" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc26" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc27" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc28" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc29" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="rh_bc30" class="bc_checkbox"/></td><td></td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="rh_bc1" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc2" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc3" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc4" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc5" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc6" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc7" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc8" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc9" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc10" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc11" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc12" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc13" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc14" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc15" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc16" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc17" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc18" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc19" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc20" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc21" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc22" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc23" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc24" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc25" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc26" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc27" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc28" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc29" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="rh_bc30" class="bc_checkbox"></div><div class="check_text"></div></div>
+          </div>
         </div>
       </div>
       
       <div id="gb" class="box">
         <p class="box-title">Gelato Beach</p>
         <div class="box-content">
-          <table class="check_table">
-            <tr><td><div id="gb_1" class="checkbox"/></td><td>Dune Bud Sand Castle Secret</td></tr>
-            <tr><td><div id="gb_2" class="checkbox"/></td><td>Mirror Madness! Tilt, Slam, Bam!</td></tr>
-            <tr><td><div id="gb_3" class="checkbox"/></td><td>Wiggler Ahoy! Full Steam Ahead!</td></tr>
-            <tr><td><div id="gb_4" class="checkbox"/></td><td>The Sand Bird Is Born</td></tr>
-            <tr><td><div id="gb_5" class="checkbox"/></td><td>II Piantissimo's Sand Sprint</td></tr>
-            <tr><td><div id="gb_6" class="checkbox"/></td><td>Red Coins In The Coral Reef</td></tr>
-            <tr><td><div id="gb_7" class="checkbox"/></td><td>It's Shadow Mario! After Him!</td></tr>
-            <tr><td><div id="gb_8" class="checkbox"/></td><td>The Watermelon Festival</td></tr>
-            <tr><td><div id="gb_s1" class="checkbox"/></td><td>Sand bud wall hidden Shine picture</td></tr>
-            <tr><td><div id="gb_s2" class="checkbox"/></td><td>Episode 1<div class="rc"/></td></tr>
-            <tr><td><div id="gb_100" class="checkbox"/></td><td>100 Coins</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="gb_1" class="checkbox"></div><div class="check_text">Dune Bud Sand Castle Secret</div></div>
+            <div class="check_row"><div id="gb_2" class="checkbox"></div><div class="check_text">Mirror Madness! Tilt, Slam, Bam!</div></div>
+            <div class="check_row"><div id="gb_3" class="checkbox"></div><div class="check_text">Wiggler Ahoy! Full Steam Ahead!</div></div>
+            <div class="check_row"><div id="gb_4" class="checkbox"></div><div class="check_text">The Sand Bird Is Born</div></div>
+            <div class="check_row"><div id="gb_5" class="checkbox"></div><div class="check_text">II Piantissimo's Sand Sprint</div></div>
+            <div class="check_row"><div id="gb_6" class="checkbox"></div><div class="check_text">Red Coins In The Coral Reef</div></div>
+            <div class="check_row"><div id="gb_7" class="checkbox"></div><div class="check_text">It's Shadow Mario! After Him!</div></div>
+            <div class="check_row"><div id="gb_8" class="checkbox"></div><div class="check_text">The Watermelon Festival</div></div>
+            <div class="check_row"><div id="gb_s1" class="checkbox"></div><div class="check_text">Sand bud wall hidden Shine picture</div></div>
+            <div class="check_row"><div id="gb_s2" class="checkbox"></div><div class="check_text">Episode 1<div class="rc"></div></div></div>
+            <div class="check_row"><div id="gb_100" class="checkbox"></div><div class="check_text">100 Coins</div></div>
+          </div>
           <div class="separator"></div>
-          <table class="bc_table">
-            <tr><td><div id="gb_bc1" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc2" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc3" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc4" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc5" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc6" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc7" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc8" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc9" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc10" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc11" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc12" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc13" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc14" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc15" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc16" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc17" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc18" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc19" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc20" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc21" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc22" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc23" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc24" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc25" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc26" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc27" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc28" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc29" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="gb_bc30" class="bc_checkbox"/></td><td></td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="gb_bc1" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc2" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc3" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc4" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc5" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc6" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc7" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc8" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc9" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc10" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc11" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc12" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc13" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc14" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc15" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc16" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc17" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc18" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc19" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc20" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc21" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc22" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc23" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc24" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc25" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc26" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc27" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc28" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc29" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="gb_bc30" class="bc_checkbox"></div><div class="check_text"></div></div>
+          </div>
         </div>
       </div>
       
       <div id="pp" class="box">
         <p class="box-title">Pinna Park</p>
         <div class="box-content">
-          <table class="check_table">
-            <tr><td><div id="pp_1" class="checkbox"/></td><td>Mecha-Bowser Appears!</td></tr>
-            <tr><td><div id="pp_2" class="checkbox"/></td><td>The Beach Cannon's Secret</td></tr>
-            <tr><td><div id="pp_3" class="checkbox"/></td><td>Red Coins Of The Pirate Ships</td></tr>
-            <tr><td><div id="pp_4" class="checkbox"/></td><td>The Wilted Sunflowers</td></tr>
-            <tr><td><div id="pp_5" class="checkbox"/></td><td>The Runaway Ferris Wheel</td></tr>
-            <tr><td><div id="pp_6" class="checkbox"/></td><td>The Yoshi-Go-Round's Secret</td></tr>
-            <tr><td><div id="pp_7" class="checkbox"/></td><td>Shadow Mario In The Park</td></tr>
-            <tr><td><div id="pp_8" class="checkbox"/></td><td>Roller Coaster Balloons</td></tr>
-            <tr><td><div id="pp_s1" class="checkbox"/></td><td>Episode 2<div class="rc"/></td></tr>
-            <tr><td><div id="pp_s2" class="checkbox"/></td><td>Episode 6<div class="rc"/></td></tr>
-            <tr><td><div id="pp_100" class="checkbox"/></td><td>100 Coins</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="pp_1" class="checkbox"></div><div class="check_text">Mecha-Bowser Appears!</div></div>
+            <div class="check_row"><div id="pp_2" class="checkbox"></div><div class="check_text">The Beach Cannon's Secret</div></div>
+            <div class="check_row"><div id="pp_3" class="checkbox"></div><div class="check_text">Red Coins Of The Pirate Ships</div></div>
+            <div class="check_row"><div id="pp_4" class="checkbox"></div><div class="check_text">The Wilted Sunflowers</div></div>
+            <div class="check_row"><div id="pp_5" class="checkbox"></div><div class="check_text">The Runaway Ferris Wheel</div></div>
+            <div class="check_row"><div id="pp_6" class="checkbox"></div><div class="check_text">The Yoshi-Go-Round's Secret</div></div>
+            <div class="check_row"><div id="pp_7" class="checkbox"></div><div class="check_text">Shadow Mario In The Park</div></div>
+            <div class="check_row"><div id="pp_8" class="checkbox"></div><div class="check_text">Roller Coaster Balloons</div></div>
+            <div class="check_row"><div id="pp_s1" class="checkbox"></div><div class="check_text">Episode 2<div class="rc"></div></div></div>
+            <div class="check_row"><div id="pp_s2" class="checkbox"></div><div class="check_text">Episode 6<div class="rc"></div></div></div>
+            <div class="check_row"><div id="pp_100" class="checkbox"></div><div class="check_text">100 Coins</div></div>
+          </div>
           <div class="separator"></div>
-          <table class="bc_table">
-            <tr><td><div id="pp_bc1" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc2" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc3" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc4" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc5" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc6" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc7" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc8" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc9" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc10" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc11" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc12" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc13" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc14" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc15" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc16" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc17" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc18" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc19" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc20" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc21" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc22" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc23" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc24" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc25" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc26" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc27" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc28" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc29" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pp_bc30" class="bc_checkbox"/></td><td></td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="pp_bc1" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc2" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc3" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc4" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc5" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc6" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc7" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc8" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc9" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc10" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc11" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc12" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc13" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc14" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc15" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc16" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc17" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc18" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc19" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc20" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc21" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc22" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc23" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc24" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc25" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc26" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc27" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc28" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc29" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pp_bc30" class="bc_checkbox"></div><div class="check_text"></div></div>
+          </div>
         </div>
       </div>
       
       <div id="sb" class="box">
         <p class="box-title">Sirena Beach</p>
         <div class="box-content">
-          <table class="check_table">
-            <tr><td><div id="sb_1" class="checkbox"/></td><td>The Manta Storm</td></tr>
-            <tr><td><div id="sb_2" class="checkbox"/></td><td>The Hotel Lobby's Secret</td></tr>
-            <tr><td><div id="sb_3" class="checkbox"/></td><td>Mysterious Hotel Delfino</td></tr>
-            <tr><td><div id="sb_4" class="checkbox"/></td><td>The Secret Of Casino Delfino</td></tr>
-            <tr><td><div id="sb_5" class="checkbox"/></td><td>King Boo Down Below</td></tr>
-            <tr><td><div id="sb_6" class="checkbox"/></td><td>Scrubbing Sirena Beach</td></tr>
-            <tr><td><div id="sb_7" class="checkbox"/></td><td>Shadow Mario Checks In</td></tr>
-            <tr><td><div id="sb_8" class="checkbox"/></td><td>Red Coins In The Hotel</td></tr>
-            <tr><td><div id="sb_s1" class="checkbox"/></td><td>Episode 2<div class="rc"/></td></tr>
-            <tr><td><div id="sb_s2" class="checkbox"/></td><td>Episode 4<div class="rc"/></td></tr>
-            <tr><td><div id="sb_100" class="checkbox"/></td><td>100 Coins</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="sb_1" class="checkbox"></div><div class="check_text">The Manta Storm</div></div>
+            <div class="check_row"><div id="sb_2" class="checkbox"></div><div class="check_text">The Hotel Lobby's Secret</div></div>
+            <div class="check_row"><div id="sb_3" class="checkbox"></div><div class="check_text">Mysterious Hotel Delfino</div></div>
+            <div class="check_row"><div id="sb_4" class="checkbox"></div><div class="check_text">The Secret Of Casino Delfino</div></div>
+            <div class="check_row"><div id="sb_5" class="checkbox"></div><div class="check_text">King Boo Down Below</div></div>
+            <div class="check_row"><div id="sb_6" class="checkbox"></div><div class="check_text">Scrubbing Sirena Beach</div></div>
+            <div class="check_row"><div id="sb_7" class="checkbox"></div><div class="check_text">Shadow Mario Checks In</div></div>
+            <div class="check_row"><div id="sb_8" class="checkbox"></div><div class="check_text">Red Coins In The Hotel</div></div>
+            <div class="check_row"><div id="sb_s1" class="checkbox"></div><div class="check_text">Episode 2<div class="rc"></div></div></div>
+            <div class="check_row"><div id="sb_s2" class="checkbox"></div><div class="check_text">Episode 4<div class="rc"></div></div></div>
+            <div class="check_row"><div id="sb_100" class="checkbox"></div><div class="check_text">100 Coins</div></div>
+          </div>
           <div class="separator"></div>
-          <table class="bc_table">
-            <tr><td><div id="sb_bc1" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc2" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc3" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc4" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc5" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc6" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc7" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc8" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc9" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc10" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc11" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc12" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc13" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc14" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc15" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc16" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc17" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc18" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc19" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc20" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc21" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc22" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc23" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc24" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc25" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc26" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc27" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc28" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc29" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="sb_bc30" class="bc_checkbox"/></td><td></td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="sb_bc1" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc2" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc3" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc4" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc5" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc6" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc7" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc8" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc9" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc10" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc11" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc12" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc13" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc14" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc15" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc16" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc17" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc18" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc19" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc20" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc21" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc22" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc23" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc24" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc25" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc26" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc27" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc28" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc29" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="sb_bc30" class="bc_checkbox"></div><div class="check_text"></div></div>
+          </div>
         </div>
       </div>
       
       <div id="nb" class="box">
         <p class="box-title">Noki Bay</p>
         <div class="box-content">
-          <table class="check_table">
-            <tr><td><div id="nb_1" class="checkbox"/></td><td>Uncork The Waterfall</td></tr>
-            <tr><td><div id="nb_2" class="checkbox"/></td><td>The Boss Of Tricky Ruins</td></tr>
-            <tr><td><div id="nb_3" class="checkbox"/></td><td>Red Coins In A Bottle</td></tr>
-            <tr><td><div id="nb_4" class="checkbox"/></td><td>Eely-Mouth's Dentist</td></tr>
-            <tr><td><div id="nb_5" class="checkbox"/></td><td>II Piantissimo's Surf Swim</td></tr>
-            <tr><td><div id="nb_6" class="checkbox"/></td><td>The Shell's Secret</td></tr>
-            <tr><td><div id="nb_7" class="checkbox"/></td><td>Hold It, Shadow Mario!</td></tr>
-            <tr><td><div id="nb_8" class="checkbox"/></td><td>The Red Coin Fish</td></tr>
-            <tr><td><div id="nb_s1" class="checkbox"/></td><td>Northwestern cliff gold bird</td></tr>
-            <tr><td><div id="nb_s2" class="checkbox"/></td><td>Episode 6<div class="rc"/></td></tr>
-            <tr><td><div id="nb_100" class="checkbox"/></td><td>100 Coins</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="nb_1" class="checkbox"></div><div class="check_text">Uncork The Waterfall</div></div>
+            <div class="check_row"><div id="nb_2" class="checkbox"></div><div class="check_text">The Boss Of Tricky Ruins</div></div>
+            <div class="check_row"><div id="nb_3" class="checkbox"></div><div class="check_text">Red Coins In A Bottle</div></div>
+            <div class="check_row"><div id="nb_4" class="checkbox"></div><div class="check_text">Eely-Mouth's Dentist</div></div>
+            <div class="check_row"><div id="nb_5" class="checkbox"></div><div class="check_text">II Piantissimo's Surf Swim</div></div>
+            <div class="check_row"><div id="nb_6" class="checkbox"></div><div class="check_text">The Shell's Secret</div></div>
+            <div class="check_row"><div id="nb_7" class="checkbox"></div><div class="check_text">Hold It, Shadow Mario!</div></div>
+            <div class="check_row"><div id="nb_8" class="checkbox"></div><div class="check_text">The Red Coin Fish</div></div>
+            <div class="check_row"><div id="nb_s1" class="checkbox"></div><div class="check_text">Northwestern cliff gold bird</div></div>
+            <div class="check_row"><div id="nb_s2" class="checkbox"></div><div class="check_text">Episode 6<div class="rc"></div></div></div>
+            <div class="check_row"><div id="nb_100" class="checkbox"></div><div class="check_text">100 Coins</div></div>
+          </div>
           <div class="separator"></div>
-          <table class="bc_table">
-            <tr><td><div id="nb_bc1" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc2" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc3" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc4" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc5" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc6" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc7" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc8" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc9" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc10" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc11" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc12" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc13" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc14" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc15" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc16" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc17" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc18" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc19" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc20" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc21" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc22" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc23" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc24" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc25" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc26" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc27" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc28" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc29" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="nb_bc30" class="bc_checkbox"/></td><td></td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="nb_bc1" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc2" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc3" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc4" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc5" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc6" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc7" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc8" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc9" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc10" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc11" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc12" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc13" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc14" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc15" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc16" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc17" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc18" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc19" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc20" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc21" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc22" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc23" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc24" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc25" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc26" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc27" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc28" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc29" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="nb_bc30" class="bc_checkbox"></div><div class="check_text"></div></div>
+          </div>
         </div>
       </div>
 
       <div id="pv" class="box">
         <p class="box-title">Pianta Village</p>
         <div class="box-content">
-          <table class="check_table">
-            <tr><td><div id="pv_1" class="checkbox"/></td><td>Chain Chomplets Unchained</td></tr>
-            <tr><td><div id="pv_2" class="checkbox"/></td><td>II Piantissmo's Crazy Climb</td></tr>
-            <tr><td><div id="pv_3" class="checkbox"/></td><td>The Goopy Inferno</td></tr>
-            <tr><td><div id="pv_4" class="checkbox"/></td><td>Chain Chomp's Bath</td></tr>
-            <tr><td><div id="pv_5" class="checkbox"/></td><td>Secret Of The Village Underside</td></tr>
-            <tr><td><div id="pv_6" class="checkbox"/></td><td>Pianta's In Need</td></tr>
-            <tr><td><div id="pv_7" class="checkbox"/></td><td>Shadow Mario Runs Wild</td></tr>
-            <tr><td><div id="pv_8" class="checkbox"/></td><td>Fluff Festival Coin Hunt</td></tr>
-            <tr><td><div id="pv_s1" class="checkbox"/></td><td>Episode 5<div class="rc"/></td></tr>
-            <tr><td><div id="pv_s2" class="checkbox"/></td><td>Episode 8 - Spray the sun from the center tree</td></tr>
-            <tr><td><div id="pv_100" class="checkbox"/></td><td>100 Coins</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="pv_1" class="checkbox"></div><div class="check_text">Chain Chomplets Unchained</div></div>
+            <div class="check_row"><div id="pv_2" class="checkbox"></div><div class="check_text">II Piantissmo's Crazy Climb</div></div>
+            <div class="check_row"><div id="pv_3" class="checkbox"></div><div class="check_text">The Goopy Inferno</div></div>
+            <div class="check_row"><div id="pv_4" class="checkbox"></div><div class="check_text">Chain Chomp's Bath</div></div>
+            <div class="check_row"><div id="pv_5" class="checkbox"></div><div class="check_text">Secret Of The Village Underside</div></div>
+            <div class="check_row"><div id="pv_6" class="checkbox"></div><div class="check_text">Pianta's In Need</div></div>
+            <div class="check_row"><div id="pv_7" class="checkbox"></div><div class="check_text">Shadow Mario Runs Wild</div></div>
+            <div class="check_row"><div id="pv_8" class="checkbox"></div><div class="check_text">Fluff Festival Coin Hunt</div></div>
+            <div class="check_row"><div id="pv_s1" class="checkbox"></div><div class="check_text">Episode 5<div class="rc"></div></div></div>
+            <div class="check_row"><div id="pv_s2" class="checkbox"></div><div class="check_text">Episode 8 - Spray the sun from the center tree</div></div>
+            <div class="check_row"><div id="pv_100" class="checkbox"></div><div class="check_text">100 Coins</div></div>
+          </div>
           <div class="separator"></div>
-          <table class="bc_table">
-            <tr><td><div id="pv_bc1" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc2" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc3" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc4" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc5" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc6" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc7" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc8" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc9" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc10" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc11" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc12" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc13" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc14" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc15" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc16" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc17" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc18" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc19" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc20" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc21" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc22" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc23" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc24" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc25" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc26" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc27" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc28" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc29" class="bc_checkbox"/></td><td></td></tr>
-            <tr><td><div id="pv_bc30" class="bc_checkbox"/></td><td></td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="pv_bc1" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc2" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc3" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc4" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc5" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc6" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc7" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc8" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc9" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc10" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc11" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc12" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc13" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc14" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc15" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc16" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc17" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc18" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc19" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc20" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc21" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc22" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc23" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc24" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc25" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc26" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc27" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc28" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc29" class="bc_checkbox"></div><div class="check_text"></div></div>
+            <div class="check_row"><div id="pv_bc30" class="bc_checkbox"></div><div class="check_text"></div></div>
+          </div>
         </div>
       </div>
       
       <div id="cm" class="box">
         <p class="box-title">Corona Mountain</p>
         <div class="box-content">
-          <table class="check_table">
-            <tr><td><div id="cm_1" class="checkbox"/></td><td>Final Boss</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="cm_1" class="checkbox"></div><div class="check_text">Final Boss</div></div>
+          </div>
           <div class="separator"></div>
-          <table class="bc_table">
-            <tr><td><div id="cm_bc1" class="bc_checkbox"/></td><td>Platform</td></tr>
-            <tr><td><div id="cm_bc2" class="bc_checkbox"/></td><td>Lava Coin 1</td></tr>
-            <tr><td><div id="cm_bc3" class="bc_checkbox"/></td><td>Lava Coin 2</td></tr>
-            <tr><td><div id="cm_bc4" class="bc_checkbox"/></td><td>Lava Coin 3</td></tr>
-            <tr><td><div id="cm_bc5" class="bc_checkbox"/></td><td>Lava Coin 4</td></tr>
-            <tr><td><div id="cm_bc6" class="bc_checkbox"/></td><td>Lava Coin 5</td></tr>
-            <tr><td><div id="cm_bc7" class="bc_checkbox"/></td><td>Lava Coin 6</td></tr>
-            <tr><td><div id="cm_bc8" class="bc_checkbox"/></td><td>Lava Coin 7</td></tr>
-            <tr><td><div id="cm_bc9" class="bc_checkbox"/></td><td>Lava Coin 8</td></tr>
-            <tr><td><div id="cm_bc10" class="bc_checkbox"/></td><td>Lava Coin 9</td></tr>
-          </table>
+          <div class="check_body">
+            <div class="check_row"><div id="cm_bc1" class="bc_checkbox"></div><div class="check_text">Platform</div></div>
+            <div class="check_row"><div id="cm_bc2" class="bc_checkbox"></div><div class="check_text">Lava Coin 1</div></div>
+            <div class="check_row"><div id="cm_bc3" class="bc_checkbox"></div><div class="check_text">Lava Coin 2</div></div>
+            <div class="check_row"><div id="cm_bc4" class="bc_checkbox"></div><div class="check_text">Lava Coin 3</div></div>
+            <div class="check_row"><div id="cm_bc5" class="bc_checkbox"></div><div class="check_text">Lava Coin 4</div></div>
+            <div class="check_row"><div id="cm_bc6" class="bc_checkbox"></div><div class="check_text">Lava Coin 5</div></div>
+            <div class="check_row"><div id="cm_bc7" class="bc_checkbox"></div><div class="check_text">Lava Coin 6</div></div>
+            <div class="check_row"><div id="cm_bc8" class="bc_checkbox"></div><div class="check_text">Lava Coin 7</div></div>
+            <div class="check_row"><div id="cm_bc9" class="bc_checkbox"></div><div class="check_text">Lava Coin 8</div></div>
+            <div class="check_row"><div id="cm_bc10" class="bc_checkbox"></div><div class="check_text">Lava Coin 9</div></div>
+          </div>
         </div>
       </div>
       
