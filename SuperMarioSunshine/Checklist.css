@@ -220,7 +220,7 @@ h2 {
   display: inline;
 }
 
-/* Checklist */
+/* Shine Checklist */
 
 .check_body {
   display: flex;
@@ -264,6 +264,32 @@ h2 {
   background-color: lightgray;
   box-shadow: -1px 1px grey;
   cursor: pointer;
+}
+
+/* Blue Coin Checklist */
+
+.bc_container {
+  display: flex;
+}
+
+.bc_rows {
+  width: 35%;
+}
+
+.bc_row {
+  display: flex;
+  margin: 5px;
+  justify-content: space-evenly;
+}
+
+.bc_help {
+  width: 60%;
+  padding: 0px 20px;
+  color: black;
+  background-color: turquoise;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 12px;
 }
 
 .bc_checkbox {

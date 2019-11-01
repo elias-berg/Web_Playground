@@ -32,27 +32,29 @@ document.addEventListener("DOMContentLoaded", () => {
   for (i = 0; i < checkboxes.length; i++)
   {
     checkboxes[i].addEventListener("click", blueCoinChecked);
+    checkboxes[i].addEventListener("mouseenter", showHint);
+    checkboxes[i].addEventListener("mouseleave", hideHint);
   }
-  
-  //var epTxts = document.getElementsByClassName("ep");
-  //for (i = 0; i < epTxts.length; i++)
-  //{
-  //  epTxts[i].toolTip = "This blue coin is available starting with Episode " + epTxts[i].innerText;
-  //}
 });
 
 // Menu Code
 function showMenu()
 {
   var menuActive = !menu.classList.contains("nodisp");
-  if (menuActive)
+  if (menuActive) // Menu is showing
   {
     menu.classList.add("nodisp");
   }
-  else
+  else // Menu is hidden
   {
     menu.classList.remove("nodisp");
   }
+}
+
+function hideMenuWrapper()
+{
+  if (menu.classList.contains("nodisp")) { return; }
+  menu.classList.add("nodisp");
 }
 
 function hideMenu(event)
@@ -63,7 +65,9 @@ function hideMenu(event)
   var rect = menu.getBoundingClientRect();
   
   if (event.clientX > rect.right)
-    menu.classList.add("nodisp");
+  {
+    hideMenuWrapper();
+  }
 }
 
 function goTo(id)
@@ -77,9 +81,8 @@ function goTo(id)
     behavior: "smooth",
     block: "center"
   });
-
-  if (!menu.classList.contains("nodisp"))
-    menu.classList.add("nodisp");
+  
+  hideMenuWrapper();
 }
 
 // Shine Checkboxes
@@ -120,6 +123,29 @@ function blueCoinChecked(event)
   }
 }
 
+function showHint(event)
+{
+  var elem = event.target;
+  if (!elem) { return; }
+  
+  var id = elem.id;
+  var stage = id.substring(0, 2);
+  console.log(stage);
+  var helpbox = document.getElementById(stage + "_help");
+  helpbox.innerText = blue_coin_hints[id];
+}
+
+function hideHint(event)
+{
+  var elem = event.target;
+  if (!elem) { return; }
+  
+  var id = elem.id;
+  var stage = id.substring(0, 2);
+  var helpbox = document.getElementById(stage + "_help");
+  helpbox.innerText = "Hover over a blue coin to show a hint.";
+}
+
 // Loading Checklist File
 function loadFile()
 {
@@ -129,6 +155,11 @@ function loadFile()
 function parseFile()
 {
   var file = input_file.files[0];
+  readFile(file);
+}
+
+function readFile(file)
+{
   var reader = new FileReader();
   
   reader.onload = function() {
@@ -137,6 +168,8 @@ function parseFile()
   }
   
   reader.readAsText(file);
+  
+  hideMenuWrapper(); // Hide menu when done
 }
 
 function processData(data)
@@ -173,11 +206,13 @@ function processData(data)
 // Saving Checklist File
 function saveFile()
 {
-    var data = serializeData();
-    var file = new Blob([data], {type: 'text/plain'});
-    var url = URL.createObjectURL(file);
-    output_file.href = url;
-    output_file.click();
+  var data = serializeData();
+  var file = new Blob([data], {type: 'text/plain'});
+  var url = URL.createObjectURL(file);
+  output_file.href = url;
+  output_file.click();
+  
+  hideMenuWrapper(); // Hide menu when done
 }
 
 function serializeData()
