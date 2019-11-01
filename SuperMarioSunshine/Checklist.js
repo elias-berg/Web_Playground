@@ -10,6 +10,11 @@ var shineCounter;
 var blueCoinCounter;
 var input_file;
 var output_file;
+var helpbox;
+
+// Timers
+var helptimer;
+var hidetimer;
 
 // Once loaded, initialize the element-based variables and event listeners
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   blueCoinCounter = document.getElementById("bc-counter");
   input_file = document.getElementById("input_file");
   output_file = document.getElementById("output_file");
+  helpbox = document.getElementById("helpbox");
 
   var i;
   var checkboxes = document.getElementsByClassName("checkbox");
@@ -32,8 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   for (i = 0; i < checkboxes.length; i++)
   {
     checkboxes[i].addEventListener("click", blueCoinChecked);
-    checkboxes[i].addEventListener("mouseenter", showHint);
-    checkboxes[i].addEventListener("mouseleave", hideHint);
+    checkboxes[i].addEventListener("contextmenu", showHint);
   }
 });
 
@@ -123,27 +128,60 @@ function blueCoinChecked(event)
   }
 }
 
+// Blue Coins Hints
 function showHint(event)
 {
+  event.preventDefault(); // Don't show a right-click menu
+  
   var elem = event.target;
   if (!elem) { return; }
   
-  var id = elem.id;
-  var stage = id.substring(0, 2);
-  console.log(stage);
-  var helpbox = document.getElementById(stage + "_help");
-  helpbox.innerText = blue_coin_hints[id];
+  var hint = blue_coin_hints[elem.id]; // Hint to display
+  
+  if (helptimer) // If waiting to hide, then reset the timer
+  {
+    clearTimeout(helptimer);
+    helptimer = null;
+  }
+  if (hidetimer) // If currently hiding, then clear it since we're about to restart
+  {
+    clearInterval(hidetimer);
+    hidetimer = null;
+  }
+  
+  // Reset opacity and set the text to the appropriate hint
+  helpbox.parentElement.style.opacity = 1.0;
+  helpbox.innerText = hint;
+  
+  // Start hiding after 5 seconds
+  helptimer = setTimeout(hideHint, 5000);
 }
 
-function hideHint(event)
+function hideHint()
 {
-  var elem = event.target;
-  if (!elem) { return; }
+  helptimer = null;
+  hidetimer = setInterval(hideHintHelper, 50);
+}
+ 
+function hideHintHelper()
+{
+  var helpbox = document.getElementById("helpbox");
+  if (!helpbox) { return; }
   
-  var id = elem.id;
-  var stage = id.substring(0, 2);
-  var helpbox = document.getElementById(stage + "_help");
-  helpbox.innerText = "Hover over a blue coin to show a hint.";
+  var parentElem = helpbox.parentElement;
+  if (!parentElem) { return; }
+  
+  // Either progress the hiding effect or end the effect altogether if
+  // the box is no longer visible
+  if (parentElem.style.opacity > 0.0)
+  {
+    parentElem.style.opacity = parentElem.style.opacity - 0.05;
+  }
+  else
+  {
+    clearInterval(hidetimer);
+    hidetimer = null;
+  }
 }
 
 // Loading Checklist File
