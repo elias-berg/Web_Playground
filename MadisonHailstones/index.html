@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial;
+      }
+      
+      a {
+        color: maroon;
+        font-size: 22px;
+        text-decoration: none;
+      }
+    
+      #banner {
+        width: 100%;
+        margin: auto;
+      }
+      
+      #banner > div {
+        display: inline-block;
+      }
+    
+      #logo {
+        background-image: url(img/logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+      }
+      
+      .banner-side {
+        width: calc((99% - 200px)/2);
+      }
+      
+      .links {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      .links > a {
+      
+      }
+      
+      .sep {
+        border: 1px solid maroon;
+        width: 80%;
+        top: 160px;
+        left: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="banner">
+      <div class="banner-side">
+        <div class="links">
+          <a href="">Hurling</a>
+          <a href="">Camogie</a>
+          <a href="">Events</a>
+        </div>
+        <hr class="sep"/>
+      </div>
+      <div id="logo"></div>
+      <div class="banner-side">
+        <div class="links">
+          <a href="">Contact</a>
+          <a href="">Lads Football</a>
+          <a href="">Ladies Football</a>
+        </div>
+        <hr class="sep"/>
+      </div>
+    </div>
+    
+    <!-- Body -->
+    
+    <!-- Footer -->
+  </body>
+</html>
