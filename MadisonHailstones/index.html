@@ -3,6 +3,8 @@
     <style>
       body {
         font-family: Arial;
+        height: 100%;
+        margin: 1px;
       }
       
       a {
@@ -10,14 +12,9 @@
         font-size: 22px;
         text-decoration: none;
       }
-    
-      #banner {
-        width: 100%;
-        margin: auto;
-      }
       
-      #banner > div {
-        display: inline-block;
+      a:hover {
+        filter: brightness(200%);
       }
     
       #logo {
@@ -27,54 +24,80 @@
         background-size: cover;
         width: 200px;
         height: 200px;
-      }
-      
-      .banner-side {
-        width: calc((99% - 200px)/2);
-      }
-      
-      .links {
-        width: 80%;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-      }
-      
-      .links > a {
-      
+        position: absolute;
+        top: 0px;
+        left: calc(50% - 100px);
+        z-index: -1;
       }
       
       .sep {
         border: 1px solid maroon;
-        width: 80%;
-        top: 160px;
-        left: 10%;
+        margin: 0px;
+      }
+      
+      #homebody {
+        padding-top: 173px;
+        width: 100%;
+        height: calc(100% - 202px);
+        display: flex;
+      }
+      
+      #homebody > a {
+        text-align: center;
+        width: calc(100% / 6);
+        height: 100%;
+      }
+      
+      #homebody > a:hover {
+        filter: brightness(200%);
+      }
+      
+      .page-img {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        filter: brightness(50%);
       }
     </style>
   </head>
   <body>
     <!-- Header -->
-    <div id="banner">
-      <div class="banner-side">
-        <div class="links">
-          <a href="">Hurling</a>
-          <a href="">Camogie</a>
-          <a href="">Events</a>
-        </div>
-        <hr class="sep"/>
-      </div>
-      <div id="logo"></div>
-      <div class="banner-side">
-        <div class="links">
-          <a href="">Contact</a>
-          <a href="">Lads Football</a>
-          <a href="">Ladies Football</a>
-        </div>
-        <hr class="sep"/>
-      </div>
-    </div>
+    <div id="logo"></div>
     
     <!-- Body -->
+    <div id="homebody">
+      <a class="link" href="./hurling/index.html">
+        Hurling
+        <hr class="sep"/>
+        <div class="page-img" style="background-image: url('img/h2_original.jpg');"></div>
+      </a>
+      <a class="link" href="./camogie/index.html">
+        Camogie
+        <hr class="sep"/>
+        <div class="page-img" style="background-image: url('img/mf.jpg');"></div>
+      </a>
+      <a class="link" href="./events/index.html">
+        Events
+        <hr class="sep"/>
+        <div class="page-img" style="background-image: url('img/mf.jpg');"></div>
+      </a>
+      <a class="link" href="./youth/index.html">
+        Youth
+        <hr class="sep"/>
+        <div class="page-img" style="background-image: url('img/mf.jpg');"></div>
+      </a>
+      <a class="link" href="./gaelicfootball/index.html">
+        Gaelic Football
+        <hr class="sep"/>
+        <div class="page-img" style="background-image: url('img/mf.jpg');"></div>
+      </a>
+      <a class="link" href="./ladiesgaelicfootball/index.html">
+        Ladies Gaelic Football
+        <hr class="sep"/>
+        <div class="page-img" style="background-image: url('img/mf.jpg');"></div>
+      </a>
+    </div>
     
     <!-- Footer -->
   </body>
