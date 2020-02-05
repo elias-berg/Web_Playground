@@ -1,0 +1,46 @@
+body {
+  font-family: Arial;
+  height: 100%;
+  margin: 1px;
+}
+
+a {
+  color: maroon;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+#logo {
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 150px;
+  min-width: 150px;
+  height: 150px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sep {
+  border: 1px solid maroon;
+  margin: 0px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+}
+
+.header > .link {
+  text-align: center;
+  width: inherit;
+  margin: auto;
+}
+
+.header > .link:hover {
+  filter: brightness(200%);
+}
