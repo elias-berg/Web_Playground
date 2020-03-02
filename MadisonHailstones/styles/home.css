@@ -1,6 +1,9 @@
+/* Home page styles */
+
 body {
   font-family: Arial;
   margin: 1px;
+  min-width: 1450px;
 }
 
 a.link {
@@ -22,7 +25,7 @@ a.link:hover {
   height: 200px;
   position: absolute;
   top: 0px;
-  left: calc(50% - 100px);
+  left: max(calc(50% - 100px), 625px);
   z-index: -1;
 }
 

@@ -1,22 +1,40 @@
 <html>
   <head>
+    <title>Madison Hailstones</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/events.css">
+    <!--<script src="../scripts/events.js"></script>-->
   </head>
   <body>
     <!-- Header -->
     <div class="header">
-      <a id="logo" href="../index.html"></a>
-      <a class="link" href="../hurling/index.html">Hurling</a>
-      <a class="link" href="../camogie/index.html">Camogie</a>
-      <a class="link" href="../events/index.html">Events</a>
-      <a class="link" href="../youth/index.html">Youth</a>
-      <a class="link" href="../gaelicfootball/index.html">Gaelic Football</a>
-      <a class="link" href="../ladiesgaelicfootball/index.html">Ladies Gaelic Football</a>
+      <a id="logo" href="../"></a>
+      <a class="link" href="../hurling/"><div>Hurling</div></a>
+      <a class="link" href="../camogie/"><div>Camogie</div></a>
+      <a class="link" href="../events/"><div>Events</div></a>
+      <a class="link" href="../youth/"><div>Youth</div></a>
+      <a class="link" href="../gaelicfootball/"><div>Gaelic Football</div></a>
+      <a class="link" href="../ladiesgaelicfootball/"><div>Ladies Gaelic Football</div></a>
     </div>
     <hr class="sep" />
     
     <!-- Body -->
+    <div class="pagebody halfcontainer">
+      <div class="halfpage">
+        Hello
+      </div>
+      <div id="calendar" class="halfpage" style="margin: auto;">
+        <p class="monthtitle"><script>document.write(new Date().toLocaleString('default', { month: 'long', year: 'numeric' }));</script></p>
+        <script src="../scripts/Calendar.js"></script>
+        <script>
+          var cal = new Calendar();
+          var elem = cal.create();
+          var calElem = document.getElementById("calendar");
+          calElem.appendChild(elem);
+        </script>
+      </div>
+    </div>
     
     <!-- Footer -->
     <footer class="copyright">
@@ -26,10 +44,20 @@
         <a href="https://www.facebook.com/madisonhurling" target="_blank"><img src="../img/fb.png"></a>	
         <a href="https://twitter.com/madisonhurling" target="_blank"><img src="../img/tw.png"></a>
         <a href="mailto:info@madisonhurling.com" target="_blank"><img src="../img/email.png"></a>
-        <a href="" target="_blank"><img src="../img/ig.png"></a>
-        <a href="" target="_blank"><img src="../img/yt.png"></a>
+        <a href="https://www.instagram.com/hurlingclubofmadison/" target="_blank"><img src="../img/ig.png"></a>
+        <a href="https://www.youtube.com/channel/UCHExjSjQHq06JVioR14eR5Q" target="_blank"><img src="../img/yt.png"></a>
       </div>
       <p>&copy; <script>document.write( new Date().getFullYear() );</script> Madison Hailstones. All Rights Reserved.</p>
     </footer>
   </body>
+  
+  <!-- Utility Scripts -->
+  <script>
+    var url = window.location.href;
+    var pieces = url.split("/");
+    var last = pieces[pieces.length - 1];
+    if (last === "") last = pieces[pieces.length - 2];
+    var links = document.querySelectorAll("a[href='../" + last + "/']");
+    if (links && links.length > 0) { links[0].classList.add("selected"); }
+  </script>
 </html>

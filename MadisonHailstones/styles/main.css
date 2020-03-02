@@ -17,7 +17,7 @@ a {
   background-size: cover;
   width: 100px;
   min-width: 100px;
-  height: 100px;
+  height: 100px; /* To match .header > .link height */
 }
 
 .links {
@@ -37,10 +37,33 @@ a {
 
 .header > .link {
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
   width: inherit;
-  margin: auto;
+  flex-direction: column;
 }
 
 .header > .link:hover {
   filter: brightness(200%);
+  background-color: #F36D6D;
+}
+
+.selected {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.pagebody {
+  min-height: 600px;
+  margin: 0px 15px;
+}
+
+.para {
+  line-height: 1.6;
+  text-indent: 40px;
+}
+
+.pageimg {
+  height: 400px;
+  width: 600px;
 }

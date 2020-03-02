@@ -1,0 +1,33 @@
+/* Events page styles */
+
+.halfcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.halfpage {
+  width: 50%;
+}
+
+.halfpage table {
+  border-collapse: collapse;
+}
+
+.monthtitle {
+  margin: 10px 0px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+td::not(.dayofmonth) {
+  border: 1px dotted gray;
+}
+
+.dayofmonth {
+  border: 1px solid black;
+}
+
+div.calcell {
+  width: 75px;
+  height: 75px;
+}
