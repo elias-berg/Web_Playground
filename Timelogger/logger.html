@@ -1,76 +1,110 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Time Logger</title>
+  <head>
+    <title>Time Logger</title>
 
-  <style>
-    .erb_space {
-      margin: 10px 10px 10px 10px;
-    }
-  
-    .erb_cell {
-      padding: 5px 5px 5px 5px;
-      border: 1px solid black;
-    }
+    <style>
+      body {
+        font-family: helvetica;
+      }
     
-    .erb_tbl {
-      border: 1px solid black;
-    }
-  </style>  
-</head>
-<body>
+      .m10 {
+        margin: 10px;
+      }
+    
+      th, td {
+        padding: 5px;
+      }
+      
+      table {
+        border-collapse: collapse;
+        border: none;
+      }
+      
+      #timetable th, #timetable td, #totaltable th, #totaltable td {
+        border: 1px solid black;
+      }
+      
+      .loggerbody {
+        margin: 30px 0 0 30px;
+      }
+      
+      .tlpbody {
+        position: fixed;
+        top: 30;
+        right: 30px;
+      }
+      
+      .add {
+        width: 20px;
+        height: 20px;
+        user-select: none;
+        cursor: pointer;
+        fill: green;
+      }
+      
+      .add:hover {
+        fill: lightgreen;
+      }
+      
+    </style>
+    <script src="./logfuncs.js"></script>
+  </head>
+  <body>
 
-<script src="./logfuncs.js"></script>
+    <div class="tlpbody">
+      <h2>Quick TLPs</h2>
+      <table id="commontlps">
+      </table>
+    </div>
 
-<h1>Time Logger</h1>
+    <div class="loggerbody">
+      <h1>&#x23F1; Time Logger</h1>
 
-<div class="erb_space">
-  <table>
-    <tbody>
-      <tr>
-      <td>TLP: <input class="disableme" type="text" id="tlp"/></td>
-      <td>Description: <input class="disableme" type="text" id="desc"/></td>
-      <td><button class="disableme" type="submit" onClick="saveLine()">Log Time</button></td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+      <div class="m10">
+        <table>
+          <tbody>
+            <tr>
+              <td>TLP: <input class="disableme" type="text" id="tlp"/></td>
+              <td>Comment: <input class="disableme" type="text" id="comm"/></td>
+              <td><button class="disableme" type="submit" onClick="saveLine()">Log Entry</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-<br>
+      <div class="m10">
+        <table id="timetable">
+          <tr>
+            <th>TLP</th>
+            <th>Description</th>
+            <th>Comment</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Time Spent</th>
+            <th>Subtotal</th>
+          </tr>
+        </table>
+      </div>
 
-<div class="erb_space">
-  <table id="timetable" class="erb_tbl">
-    <tbody class="erb_tbl">
-      <tr>
-        <th class="erb_cell">TLP</th>
-        <th class="erb_cell">Description</th>
-        <th class="erb_cell">Start Time</th>
-        <th class="erb_cell">End Time</th>
-        <th class="erb_cell">Time Spent</th>
-        <th class="erb_cell">Subtotal</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
+      <div class="m10">
+        <button class="disableme" type="submit" onClick="finish()">Call it a day!</button>
+      </div>
 
-<br>
+      <div class="m10" id="totals" hidden="true">
+      <h2>Totals</h2>
+        <table id="totaltable">
+          <tbody>
+            <tr>
+              <th>TLP</th>
+              <th>Description</th>
+              <th>Comments</th>
+              <th>Total Time Spent</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-<div class="erb_space">
-  <button class="disableme" type="submit" onClick="finish()">Finish</button>
-</div>
-
-<div class="erb_space" id="totals" hidden="true">
-<h2>Totals</h2>
-  <table id="totaltable" class="erb_tbl">
-    <tbody>
-      <tr>
-        <th class="erb_cell">TLP</th>
-        <th class="erb_cell">Descriptions</th>
-        <th class="erb_cell">Total Time Spent</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-</body>
+  </body>
 </html>

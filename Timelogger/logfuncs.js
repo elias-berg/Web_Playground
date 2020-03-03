@@ -1,7 +1,60 @@
-//Now John at the bar is a friend of mine
-//He gets me my drinks for free
-//And he's quick with a joke or to light up your smoke
-//But there's someplace that he'd rather be
+// Now John at the bar is a friend of mine
+// He gets me my drinks for free
+// And he's quick with a joke or to light up your smoke
+// But there's someplace that he'd rather be
+
+var tlps = {
+  "12": "Design",
+  "16": "Design Review",
+  "13": "Development",
+  "14": "PQA",
+  "50337": "Development Support (Internal)",
+  "13279": "QAN Investigation"
+};
+
+function quickAdd(ev)
+{
+  if (!ev || !ev.target) { return; }
+  
+  var row = ev.target;
+  while (row.nodeName !== "TR")
+  {
+    row = row.parentNode;
+  }
+  
+  saveTLP(row.childNodes[1].innerText, row.childNodes[2].innerText, "");
+}
+
+function loadCommonTLPs()
+{
+  var table = document.getElementById("commontlps");
+  if (!table) { return; }
+  
+  var tlp, tr, td;
+  for (tlp in tlps)
+  {
+    tr = document.createElement("tr");
+    td = document.createElement("td");
+    td.className = "add";
+    td.innerHTML = plusSVG();
+    td.addEventListener("click", quickAdd);
+    tr.appendChild(td);
+    td = document.createElement("td");
+    td.innerText = tlp;
+    tr.appendChild(td);
+    td = document.createElement("td");
+    td.innerText = tlps[tlp];
+    tr.appendChild(td);
+    table.appendChild(tr);
+  }
+}
+
+function plusSVG()
+{
+  return "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><g><polygon points='140,60 100,60 100,20 60,20 60,60 20,60 20,100 60,100 60,140 100,140 100,100 140,100 '></polygon></g></svg>"
+}
+
+document.addEventListener("DOMContentLoaded", loadCommonTLPs);
 
 var DATE;
 var curtime = 0;
@@ -11,13 +64,22 @@ var tlpMap = [];
 function saveLine()
 {
   var curtlp = document.getElementById("tlp");
-  var curdesc = document.getElementById("desc");
+  var curcomm = document.getElementById("comm");
   var tlp = curtlp.value;
-  var desc = curdesc.value;
+  var comm = curcomm.value;
   
   if (tlp === "") // quit if not all data entered
     return;
   
+  var desc = tlps[tlp] || "";
+  saveTLP(tlp, desc, comm);
+  
+  curtlp.value = "";
+  curcomm.value = "";
+}
+
+function saveTLP(tlp, desc, comm)
+{
   var cur = dateInfo();
   if (curtime > 0) // fill the last cell
     updateLastCell(cur);
@@ -32,9 +94,14 @@ function saveLine()
   cell.id = "lasttlp";
   cell.className = "erb_cell";
   
-  // description cell;
+  // description cell
   cell = row.insertCell();
   cell.innerHTML = desc;
+  cell.className = "erb_cell";
+  
+  // comments cell
+  cell = row.insertCell();
+  cell.innerHTML = comm;
   cell.className = "erb_cell";
   
   // start time cell
@@ -59,9 +126,6 @@ function saveLine()
   cell.id = "subtotal";
   cell.innerHTML = "-";
   cell.className = "erb_cell";
-  
-  curtlp.value = "";
-  curdesc.value = "";
 }
 
 function dateInfo()
@@ -86,6 +150,7 @@ function finish()
   {
     row = table.insertRow();
     addERBCell(row, tlp);
+    addERBCell(row, tlps[tlp] || "");
     addERBCell(row, "Not Implemented");
     var time = tlpMap[tlp];
     addERBCell(row, time);
@@ -95,7 +160,7 @@ function finish()
   // Total total at the bottom of the total table
   row = table.insertRow();
   var cell = addERBCell(row, "Total");
-  cell.colSpan = "2";
+  cell.colSpan = "3";
   addERBCell(row, total);
   
   // Disable the controls
