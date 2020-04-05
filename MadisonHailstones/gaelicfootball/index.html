@@ -1,70 +1,63 @@
 <html>
   <head>
-    <style>
-      body {
-        font-family: Arial;
-        height: 100%;
-        margin: 1px;
-      }
-      
-      a {
-        color: maroon;
-        font-size: 16px;
-        text-decoration: none;
-      }
-    
-      #logo {
-        background-image: url(../img/logo.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        width: 150px;
-        min-width: 150px;
-        height: 150px;
-      }
-      
-      .links {
-        display: flex;
-        justify-content: space-around;
-      }
-      
-      .sep {
-        border: 1px solid maroon;
-        margin: 0px;
-      }
-      
-      .header {
-        width: 100%;
-        display: flex;
-      }
-      
-      .header > .link {
-        text-align: center;
-        width: inherit;
-        margin: auto;
-      }
-      
-      .header > .link:hover {
-        filter: brightness(200%);
-      }
-    </style>
+    <title>Madison Hailstones</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/footer.css">
   </head>
   <body>
     <!-- Header -->
     <div class="header">
-      <a id="logo" href="../index.html"></a>
-      <a class="link" href="../hurling/index.html">Hurling</a>
-      <a class="link" href="../camogie/index.html">Camogie</a>
-      <a class="link" href="../events/index.html">Events</a>
-      <a class="link" href="../youth/index.html">Youth</a>
-      <a class="link" href="../gaelicfootball/index.html">Gaelic Football</a>
-      <a class="link" href="../ladiesgaelicfootball/index.html">Ladies Gaelic Football</a>
-      
+      <a id="logo" href="../"></a>
+      <a class="link" href="../hurling/"><div>Hurling</div></a>
+      <a class="link" href="../camogie/"><div>Camogie</div></a>
+      <a class="link" href="../events/"><div>Events</div></a>
+      <a class="link" href="../youth/"><div>Youth</div></a>
+      <a class="link" href="../gaelicfootball/"><div>Gaelic Football</div></a>
+      <a class="link" href="../ladiesgaelicfootball/"><div>Ladies Gaelic Football</div></a>
     </div>
     <hr class="sep" />
     
     <!-- Body -->
+    <div class="pagebody">
+      <img style="float:left; margin-right:10px;" class="pageimg" src="../img/mf_team.jpg">
+      <p class="para">
+      Gaelic football is a highly-skilled, fast-paced, and intense sport and has been described as a mix between soccer and rugby.
+      It is played between two teams of 15 players on a large rectangular grass pitch with H-shaped goals at either end of the pitch.
+      The objective is for players get a ball, roughly the size of a volleyball, up the field towards the opposing end.
+      Players can use their hands or feet to hit the ball to pass to each other or to shoot for scores.
+      Getting the ball past the opposing goalkeeper and into the net is 3 points, while kicking it over the bar, like a field goal in American Football, is worth 1 point.
+      The players on each team typically have designated roles and positions which are: 1 goalkeeper, 6 defenders, 2 midfielders, and 6 forwards.
+      </p>
+      <p class="para">
+      We take part in multiple tournaments in the Midwest over the summer months in preparation for the North American finals in August.
+      We also like to have fun and have many social events throughout the year.
+      </p>
+      <p><strong>New members are always welcome and encouraged!</strong></p>
+      <br/>
+      <p>
+        <strong>Practices</strong>
+        <br/>
+        <i>When:</i>&nbsp&nbsp&nbsp Tuesdays @ 6:35 PM
+        <br/>
+        <i>Where:</i>&nbsp&nbsp University Bay Rugby Fields
+      </p>
+    </div>
     
     <!-- Footer -->
+    <footer class="copyright">
+      <hr class="sep"/>
+      <div class="footer-links">
+        <!-- Icons made by Freepik (https://www.flaticon.com/authors/freepik) -->
+        <a href="https://www.facebook.com/madisonhurling" target="_blank"><img src="../img/fb.png"></a>	
+        <a href="https://twitter.com/madisonhurling" target="_blank"><img src="../img/tw.png"></a>
+        <a href="mailto:info@madisonhurling.com" target="_blank"><img src="../img/email.png"></a>
+        <a href="https://www.instagram.com/hurlingclubofmadison/" target="_blank"><img src="../img/ig.png"></a>
+        <a href="https://www.youtube.com/channel/UCHExjSjQHq06JVioR14eR5Q" target="_blank"><img src="../img/yt.png"></a>
+      </div>
+      <p>&copy; <script>document.write( new Date().getFullYear() );</script> Madison Hailstones. All Rights Reserved.</p>
+    </footer>
   </body>
+  
+  <!-- Utility Scripts -->
+  <script src="../scripts/utility.js"></script>
 </html>

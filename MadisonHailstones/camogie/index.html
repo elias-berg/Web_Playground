@@ -1,70 +1,59 @@
 <html>
   <head>
-    <style>
-      body {
-        font-family: Arial;
-        height: 100%;
-        margin: 1px;
-      }
-      
-      a {
-        color: maroon;
-        font-size: 16px;
-        text-decoration: none;
-      }
-    
-      #logo {
-        background-image: url(../img/logo.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        width: 150px;
-        min-width: 150px;
-        height: 150px;
-      }
-      
-      .links {
-        display: flex;
-        justify-content: space-around;
-      }
-      
-      .sep {
-        border: 1px solid maroon;
-        margin: 0px;
-      }
-      
-      .header {
-        width: 100%;
-        display: flex;
-      }
-      
-      .header > .link {
-        text-align: center;
-        width: inherit;
-        margin: auto;
-      }
-      
-      .header > .link:hover {
-        filter: brightness(200%);
-      }
-    </style>
+    <title>Madison Hailstones</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/footer.css">
   </head>
   <body>
     <!-- Header -->
     <div class="header">
-      <a id="logo" href="../index.html"></a>
-      <a class="link" href="../hurling/index.html">Hurling</a>
-      <a class="link" href="../camogie/index.html">Camogie</a>
-      <a class="link" href="../events/index.html">Events</a>
-      <a class="link" href="../youth/index.html">Youth</a>
-      <a class="link" href="../gaelicfootball/index.html">Gaelic Football</a>
-      <a class="link" href="../ladiesgaelicfootball/index.html">Ladies Gaelic Football</a>
-      
+      <a id="logo" href="../"></a>
+      <a class="link" href="../hurling/"><div>Hurling</div></a>
+      <a class="link" href="../camogie/"><div>Camogie</div></a>
+      <a class="link" href="../events/"><div>Events</div></a>
+      <a class="link" href="../youth/"><div>Youth</div></a>
+      <a class="link" href="../gaelicfootball/"><div>Gaelic Football</div></a>
+      <a class="link" href="../ladiesgaelicfootball/"><div>Ladies Gaelic Football</div></a>
     </div>
     <hr class="sep" />
     
     <!-- Body -->
+    <div class="pagebody">
+      <img style="float:right; margin-left:10px;" class="pageimg" src="../img/c_team.jpg">
+      <p class="para">
+      The fastest sport on grass, Camogie is the women's equivalent of hurling with a few minor rule changes.
+      Described best as a combination of softball, lacrosse, and field hockey; this sport requires hand-eye coordination with a hurley to strike a ball up the field in order to score.
+      </p>
+      <p class="para">
+      2019 was the first year of an official practice schedule for our Camogie team as we slowly grow this sport in Madison.
+      Equipment is provided at practices and we welcome new players throughout the year.
+      </p>
+      <p><strong>Come try it out today!</strong></p>
+      <br/>
+      <p>
+        <strong>Practices</strong>
+        <br/>
+        <i>When:</i>&nbsp&nbsp&nbsp Mondays @ 6:15 PM
+        <br/>
+        <i>Where:</i>&nbsp&nbsp University Bay Rugby Fields
+      </p>
+    </div>
     
     <!-- Footer -->
+    <footer class="copyright">
+      <hr class="sep"/>
+      <div class="footer-links">
+        <!-- Icons made by Freepik (https://www.flaticon.com/authors/freepik) -->
+        <a href="https://www.facebook.com/madisonhurling" target="_blank"><img src="../img/fb.png"></a>	
+        <a href="https://twitter.com/madisonhurling" target="_blank"><img src="../img/tw.png"></a>
+        <a href="mailto:info@madisonhurling.com" target="_blank"><img src="../img/email.png"></a>
+        <a href="https://www.instagram.com/hurlingclubofmadison/" target="_blank"><img src="../img/ig.png"></a>
+        <a href="https://www.youtube.com/channel/UCHExjSjQHq06JVioR14eR5Q" target="_blank"><img src="../img/yt.png"></a>
+      </div>
+      <p>&copy; <script>document.write( new Date().getFullYear() );</script> Madison Hailstones. All Rights Reserved.</p>
+    </footer>
   </body>
+  
+  <!-- Utility Scripts -->
+  <script src="../scripts/utility.js"></script>
 </html>

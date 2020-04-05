@@ -1,0 +1,45 @@
+{ "Events" : 
+  {
+    "Hurling Practice" :
+    {
+      "start" : "04/16/20",
+      "end" : "08/13/20"
+    },
+    
+    "Camogie Practice" :
+    {
+    },
+    
+    "Midwest Tournament" :
+    {
+      "start" : "09/12/20"
+    },
+    
+    "St. Patrick's Day Parade" :
+    {
+      "start" : "03/15/20",
+      "canceled" : true
+    },
+    
+    "St. Patrick's Day" :
+    {
+      "start" : "03/17/20"
+    },
+    
+    "Twin Cities North Star Tournament" :
+    {
+      "start" : "06/02/20"
+    },
+    
+    "Indianapolis Invitational" :
+    {
+      "start" : "06/20/2020"
+    },
+    
+    "USGAA Nationals" :
+    {
+      "start" : "08/22/20",
+      "span": 2
+    }
+  }
+}

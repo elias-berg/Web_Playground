@@ -1,0 +1,67 @@
+/* Home page styles */
+
+body {
+  font-family: Arial;
+  margin: 1px;
+  min-width: 1450px;
+}
+
+a.link {
+  color: maroon;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+a.link:hover {
+  filter: brightness(200%);
+}
+
+#logo {
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0px;
+  left: max(calc(50% - 100px), 625px);
+  z-index: -1;
+}
+
+.sep {
+  border: 1px solid maroon;
+  margin: 0px;
+}
+
+#homebody {
+  padding-top: 173px;
+  width: 100%;
+  height: calc(100% - 202px);
+  display: flex;
+  margin-bottom: 30px;
+}
+
+#homebody > a {
+  text-align: center;
+  width: calc(100% / 6);
+  height: 100%;
+}
+
+#homebody > a:hover {
+  filter: brightness(200%);
+}
+
+.page-img {
+  height: 100%;
+  width: 100%;
+  filter: brightness(50%);
+}
+
+hr.sep + img.page-img {
+  margin-top: 1px;
+}
+
+a.link + a.link {
+  margin-left: 1px;
+}

@@ -6,7 +6,7 @@ body {
 
 a {
   color: maroon;
-  font-size: 22px;
+  font-size: 18px;
   text-decoration: none;
 }
 
@@ -15,9 +15,9 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 150px;
-  min-width: 150px;
-  height: 150px;
+  width: 100px;
+  min-width: 100px;
+  height: 100px; /* To match .header > .link height */
 }
 
 .links {
@@ -28,6 +28,7 @@ a {
 .sep {
   border: 1px solid maroon;
   margin: 0px;
+  width: 100%;
 }
 
 .header {
@@ -37,10 +38,33 @@ a {
 
 .header > .link {
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
   width: inherit;
-  margin: auto;
+  flex-direction: column;
 }
 
 .header > .link:hover {
   filter: brightness(200%);
+  background-color: #F36D6D;
+}
+
+.selected {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.pagebody {
+  min-width: 850px;
+  min-height: 600px;
+  margin: 50px 50px;
+}
+
+.para {
+  line-height: 1.6;
+}
+
+.pageimg {
+  height: 400px;
+  width: 600px;
 }

@@ -1,72 +1,11 @@
 <html>
   <head>
+    <title>Madison Hailstones</title>
     <style>
-      body {
-        font-family: Arial;
-        margin: 1px;
-      }
-      
-      a.link {
-        color: maroon;
-        font-size: 22px;
-        text-decoration: none;
-      }
-      
-      a.link:hover {
-        filter: brightness(200%);
-      }
-    
-      #logo {
-        background-image: url(img/logo.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        width: 200px;
-        height: 200px;
-        position: absolute;
-        top: 0px;
-        left: calc(50% - 100px);
-        z-index: -1;
-      }
-      
-      .sep {
-        border: 1px solid maroon;
-        margin: 0px;
-      }
-      
-      #homebody {
-        padding-top: 173px;
-        width: 100%;
-        height: calc(100% - 202px);
-        display: flex;
-        margin-bottom: 50px;
-      }
-      
-      #homebody > a {
-        text-align: center;
-        width: calc(100% / 6);
-        height: 100%;
-      }
-      
-      #homebody > a:hover {
-        filter: brightness(200%);
-      }
-      
-      .page-img {
-        height: 100%;
-        width: 100%;
-        filter: brightness(50%);
-      }
-      
-      hr.sep + img.page-img {
-        margin-top: 1px;
-      }
-      
-      a.link + a.link {
-        margin-left: 1px;
-      }
     </style>
+    <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
     <!-- Header -->
@@ -74,35 +13,35 @@
     
     <!-- Body -->
     <div id="homebody">
-      <a class="link" href="./hurling/index.html">
+      <a class="link" href="./hurling/">
         Hurling
         <hr class="sep"/>
-        <img class="page-img" src="img/h.jpg"></img>
+        <img class="page-img" src="img/hurling_banner.jpg"></img>
       </a>
-      <a class="link" href="./camogie/index.html">
+      <a class="link" href="./camogie/">
         Camogie
         <hr class="sep"/>
-        <img class="page-img" src="img/c.jpg"></img>
+        <img class="page-img" src="img/camogie_banner.jpg"></img>
       </a>
-      <a class="link" href="./events/index.html">
+      <a class="link" href="./events/">
         Events
         <hr class="sep"/>
-        <img class="page-img" src="img/gatorade.jpg"></img>
+        <img class="page-img" src="img/events_banner.jpg"></img>
       </a>
-      <a class="link" href="./youth/index.html">
+      <a class="link" href="./youth/">
         Youth
         <hr class="sep"/>
-        <img class="page-img" src="img/gatorade.jpg"></img>
+        <img class="page-img" src="img/youth_banner.jpg"></img>
       </a>
-      <a class="link" href="./gaelicfootball/index.html">
+      <a class="link" href="./gaelicfootball/">
         Gaelic Football
         <hr class="sep"/>
-        <img class="page-img" src="img/mf.jpg"></img>
+        <img class="page-img" src="img/football_banner.jpg"></img>
       </a>
-      <a class="link" href="./ladiesgaelicfootball/index.html">
+      <a class="link" href="./ladiesgaelicfootball/">
         Ladies Gaelic Football
         <hr class="sep"/>
-        <img class="page-img" src="img/lf.jpg"></img>
+        <img class="page-img" src="img/ladiesfootball_banner.jpg"></img>
       </a>
     </div>
     
@@ -110,11 +49,14 @@
     <footer class="copyright">
       <hr class="sep"/>
       <div class="footer-links">
+        <!-- Icons made by Freepik (https://www.flaticon.com/authors/freepik) -->
         <a href="https://www.facebook.com/madisonhurling" target="_blank"><img src="img/fb.png"></a>	
         <a href="https://twitter.com/madisonhurling" target="_blank"><img src="img/tw.png"></a>
         <a href="mailto:info@madisonhurling.com" target="_blank"><img src="img/email.png"></a>
+        <a href="https://www.instagram.com/hurlingclubofmadison/" target="_blank"><img src="img/ig.png"></a>
+        <a href="https://www.youtube.com/channel/UCHExjSjQHq06JVioR14eR5Q" target="_blank"><img src="img/yt.png"></a>
       </div>
-      <p>© <script>document.write( new Date().getFullYear() );</script> Madison Hailstones. All Rights Reserved.</p>
+      <p>&copy; <script>document.write( new Date().getFullYear() );</script> Madison Hailstones. All Rights Reserved.</p>
     </footer>
   </body>
 </html>

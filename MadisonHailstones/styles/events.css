@@ -1,0 +1,96 @@
+/* Events page styles */
+
+.pagebody {
+  min-width: 1150px !important;
+}
+
+.halfcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.halfcontainer > div {
+  margin: 0px 10px;
+}
+
+.leftpage {
+  min-width: 400px;
+}
+
+.rightpage {
+  width: 70%;
+}
+
+.rightpage table {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.sectiontitle {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+td {
+  width: 120px;
+  height: 120px;
+}
+
+td::not(.dayofmonth) {
+  border: 1px dotted gray;
+}
+
+.dayofmonth {
+  border: 1px solid black;
+  vertical-align: top;
+}
+
+.dayofweek {
+  font-weight: 100;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.daytext {
+  margin: 0;
+  text-align: right;
+  user-select: none;
+}
+
+.today {
+  background-color: pink;
+}
+
+.event {
+  font-size: 12px;
+  background-color: brown;
+  color: white;
+  text-align: center;
+  padding: 2px;
+  user-select: none;
+}
+
+.canceled {
+  text-decoration: line-through;
+}
+
+.monthtoggle {
+  width: 30px;
+  height: 30px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.monthtoggle:hover {
+  background-color: lightgray;
+}
+
+li {
+  font-size: 18px;
+}
+
+li + li {
+  margin: 5px 0;
+}
