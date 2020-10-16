@@ -1,19 +1,14 @@
 /* Home page styles */
 
 body {
-  font-family: Arial;
+  font-family: Segoe UI;
   margin: 1px;
-  min-width: 1450px;
 }
 
-a.link {
-  color: maroon;
-  font-size: 22px;
-  text-decoration: none;
-}
+/* Header */
 
-a.link:hover {
-  filter: brightness(200%);
+#header {
+  display: flex;
 }
 
 #logo {
@@ -21,47 +16,96 @@ a.link:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+  flex-grow: 0;
+}
+
+#header > div:not(#logo) {
+  flex-grow: 1;
+  margin: auto;
+  text-align: center;
+  color: maroon;
+}
+
+#header > div > h1 {
+  margin: 0;
+  font-size: 48px;
+}
+
+#header > div > h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+@media screen and (max-width: 1000px) {
+  #header > div > h1 {
+    font-size: 32px;
+  }
+
+  #header > div > h2 {
+    font-size: 18px;
+  }
+}
+
+/* Body */
+
+#homebody {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.banner {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 32.33%;
+  margin: 5 0.5%;
+  text-decoration: none;
+  position: relative;
+}
+
+@media screen and (max-width: 1500px) {
+  .banner {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .banner {
+    width: 99%;
+  }
+}
+
+.banner_text {
+  color: maroon;
+  font-size: 35px;
+  font-weight: 800;
+  text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.banner > img {
+  height: 100%;
+  width: 100%;
   position: absolute;
-  top: 0px;
-  left: max(calc(50% - 100px), 625px);
+  top: 0;
+  left: 0;
   z-index: -1;
+}
+
+.banner:hover > img {
+  filter: brightness(70%);
+}
+
+.banner:hover > p {
+  color: red;
+  filter: brightness(120%);
 }
 
 .sep {
   border: 1px solid maroon;
   margin: 0px;
-}
-
-#homebody {
-  padding-top: 173px;
-  width: 100%;
-  height: calc(100% - 202px);
-  display: flex;
-  margin-bottom: 30px;
-}
-
-#homebody > a {
-  text-align: center;
-  width: calc(100% / 6);
-  height: 100%;
-}
-
-#homebody > a:hover {
-  filter: brightness(200%);
-}
-
-.page-img {
-  height: 100%;
-  width: 100%;
-  filter: brightness(50%);
-}
-
-hr.sep + img.page-img {
-  margin-top: 1px;
-}
-
-a.link + a.link {
-  margin-left: 1px;
 }

@@ -20,11 +20,6 @@ a {
   height: 100px; /* To match .header > .link height */
 }
 
-.links {
-  display: flex;
-  justify-content: space-around;
-}
-
 .sep {
   border: 1px solid maroon;
   margin: 0px;
@@ -39,7 +34,7 @@ a {
 .header > .link {
   text-align: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   width: inherit;
   flex-direction: column;
 }
@@ -58,6 +53,7 @@ a {
   min-width: 850px;
   min-height: 600px;
   margin: 50px 50px;
+  display: flex;
 }
 
 .para {
@@ -67,4 +63,30 @@ a {
 .pageimg {
   height: 400px;
   width: 600px;
+}
+
+.pageleft + .pageright {
+  margin-left: 20px;
+}
+
+.practices {
+  border: 1px dotted gray;
+  background-color: pink;
+  width: 500px;
+  margin: auto;
+  padding: 10px;
+}
+
+.practices > table {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.practices > table > caption {
+  font-weight: 600;
+}
+
+.practices td, .practices th {
+  border: 1px solid black;
+  padding: 5px;
 }

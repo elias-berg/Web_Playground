@@ -6,7 +6,8 @@
 var eventList = document.getElementById("eventList");
 
 // First, let's create the calendar
-var calendar = new Calendar("calendar");
+var calendar = new Calendar();
+calendar.generateCalendar("calendar");
 
 // Now let's parse through the events
 var request = new XMLHttpRequest();
