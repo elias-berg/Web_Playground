@@ -26,7 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
   input_file = document.getElementById("input_file");
   output_file = document.getElementById("output_file");
   helpbox = document.getElementById("helpbox");
+  
+  // Helpbox mouse listeners; prevent hiding if the mouse is moving over it
+  helpbox.addEventListener("mouseover", resetHideTimer);
+  helpbox.addEventListener("mousemove", resetHideTimer);
 
+  // Shine checkbox click listeners
   var i;
   var checkboxes = document.getElementsByClassName("checkbox");
   for (i = 0; i < checkboxes.length; i++)
@@ -34,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkboxes[i].addEventListener("click", shineChecked);
   }
   
+  // Blue coin checkbox click listeners
   checkboxes = document.getElementsByClassName("bc_checkbox");
   for (i = 0; i < checkboxes.length; i++)
   {
@@ -137,7 +143,14 @@ function showHint(event)
   if (!elem) { return; }
   
   var hint = blue_coin_hints[elem.id]; // Hint to display
+  helpbox.innerText = hint;
   
+  // Reset the timers and help box opacity (if it was on it's way to hiding).
+  resetHideTimer();
+}
+
+function resetHideTimer()
+{
   if (helptimer) // If waiting to hide, then reset the timer
   {
     clearTimeout(helptimer);
@@ -149,10 +162,8 @@ function showHint(event)
     hidetimer = null;
   }
   
-  // Reset opacity and set the text to the appropriate hint
   helpbox.parentElement.style.opacity = 1.0;
-  helpbox.innerText = hint;
-  
+    
   // Start hiding after 5 seconds
   helptimer = setTimeout(hideHint, 5000);
 }
