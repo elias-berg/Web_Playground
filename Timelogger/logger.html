@@ -2,10 +2,12 @@
 <html>
   <head>
     <title>Time Logger</title>
+    <link rel="icon" type="image/png" href="favicon-16x16.png">
 
-    <style>
+    <style>    
       body {
         font-family: helvetica;
+        margin: 0 0 0 30px;
       }
     
       .m10 {
@@ -25,19 +27,28 @@
         border: 1px solid black;
       }
       
-      .loggerbody {
-        margin: 30px 0 0 30px;
+      .mainbody {
+        display: flex;
+        margin-left: 10px;
       }
       
-      .tlpbody {
-        position: fixed;
-        top: 30;
-        right: 30px;
+      .loggerbody {
+        margin: 15px 0 0 30px;
+      }
+      
+      .codebody {
+      }
+      
+      .loggertable {
+        border-collapse: collapse;
+        border: 1px dotted black;
       }
       
       .add {
         width: 20px;
+        min-width: 20px;
         height: 20px;
+        min-height: 20px;
         user-select: none;
         cursor: pointer;
         fill: green;
@@ -47,64 +58,107 @@
         fill: lightgreen;
       }
       
+      #buffer {
+        width: 50px;
+      }
+      
+      .nodisp {
+        display: none;
+      }
     </style>
     <script src="./logfuncs.js"></script>
   </head>
   <body>
-
-    <div class="tlpbody">
-      <h2>Quick TLPs</h2>
-      <table id="commontlps">
-      </table>
+    
+    <div style="display:flex; align-items:baseline; border: none; border-bottom: 2px solid black; margin-bottom: 0;">
+      <h1 style="margin-right: 10px;">&#x23F1; Time Logger</h1>
+      <h3 style="color: red;">
+        <script>var today = new Date(); document.write(String(today.getMonth() + 1).padStart(2, '0') + "/" + String(today.getDate()).padStart(2, '0') + "/" + today.getFullYear());</script>
+      </h3>
     </div>
 
-    <div class="loggerbody">
-      <h1>&#x23F1; Time Logger</h1>
+    <div class="mainbody">
 
-      <div class="m10">
-        <table>
-          <tbody>
+      <!-- Quick Code Buttons` -->
+      <div class="codebody">
+        <h2>Quick Codes</h2>
+        <table id="commoncodes">
+        </table>
+      </div>
+
+      <div class="loggerbody">
+        
+        <!-- Start Time Buffer -->
+        <div class="m10">
+          <table class="buffertable">
             <tr>
-              <td>TLP: <input class="disableme" type="text" id="tlp"/></td>
-              <td>Comment: <input class="disableme" type="text" id="comm"/></td>
-              <td><button class="disableme" type="submit" onClick="saveLine()">Log Entry</button></td>
+              <th>Start Time Buffer:</th>
+              <td><input class="disableme" type="text" id="buffer" /></td>
             </tr>
-          </tbody>
-        </table>
-      </div>
+          </table>
+        </div>
+      
+        <!-- Main Logging Entry -->
+        <div class="m10">
+          <table class="loggertable">
+            <tbody>
+              <tr>
+                <td>Code: <input class="disableme" type="text" id="code"/></td>
+                <td>Comment: <input class="disableme" type="text" id="comm"/></td>
+                <td><button class="disableme" type="submit" onClick="saveLine()">Log Start</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <div class="m10">
-        <table id="timetable">
-          <tr>
-            <th>TLP</th>
-            <th>Description</th>
-            <th>Comment</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-            <th>Time Spent</th>
-            <th>Subtotal</th>
-          </tr>
-        </table>
-      </div>
+        <!-- Lunch Break Buttons -->
+        <div class="m10">
+          <button class="disableme" type="submit" id="pause" onClick="pause()">Out For Lunch</button>
+          <button class="disableme" type="submit" id="unpause" onClick="unpause()" disabled>Back From Lunch</button>
+        </div>
 
-      <div class="m10">
-        <button class="disableme" type="submit" onClick="finish()">Call it a day!</button>
-      </div>
-
-      <div class="m10" id="totals" hidden="true">
-      <h2>Totals</h2>
-        <table id="totaltable">
-          <tbody>
+        <!-- Dynamic Tracking Table -->
+        <div class="m10">
+          <table id="timetable">
             <tr>
-              <th>TLP</th>
+              <th>Code</th>
               <th>Description</th>
-              <th>Comments</th>
-              <th>Total Time Spent</th>
+              <th>Comment</th>
+              <th>Time</th>
+              <th>Time Spent</th>
+              <th>Subtotal</th>
             </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+          </table>
+        </div>
 
+        <!-- Finalize Button -->
+        <div class="m10">
+          <table>
+            <tr>
+              <td>
+                <button class="disableme" type="submit" onClick="finish()">Call It A Day!</button>
+              </td>
+              <td id="atTime"></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Totals Table -->
+        <div class="m10" id="totals" class="nodisp">
+        <h2>Totals</h2>
+          <table id="totaltable">
+            <tbody>
+              <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Comments</th>
+                <th>Total Time Spent</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
   </body>
 </html>
