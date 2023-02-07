@@ -18,8 +18,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# =========================
-# Operating System Files
-# =========================
-SuperMarioSunshine/img/gitignore/*
-MadisonHailstones/img/gitignore/*
+# node files
+node_modules/

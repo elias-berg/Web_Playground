@@ -1,1 +1,0 @@
-Eli's personal web playground. A collection of random little web-related projects of various stages of completion.

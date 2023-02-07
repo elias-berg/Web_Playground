@@ -1,82 +1,125 @@
 <html>
   <head>
     <style>
-      canvas {
-        width: 100%;
-        height: 500px;
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overflow: hidden;
       }
     </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   </head>
   <body>
-    <div id="container">
-      <canvas id="gameview"></canvas>
-    </div>
+    <canvas id="gameview"></canvas>
   </body>
   
   <script>
-    // Key press handling
-    var validKeys = {
-      "ArrowDown": true,
-      "ArrowLeft": true,
-      "ArrowRight": true,
-      "ArrowUp": true // keyCode === 38
-    };
-    var keyMap = {};
-    window.onkeydown = function(e){
-      e = e || event; // to deal with IE
-      if (!(validKeys[e.key])) { return; }
-      keyMap[e.key] = true;
-      
-      redraw(); // In case of new direction
-    }
-    window.onkeyup = function(e){
-      e = e || event; // to deal with IE
-      if (!keyMap[e.key]) { return; }
-      delete keyMap[e.key];
-      
-      redraw(); // In case of new direction
+    // State variables
+    var fps = 30;
+    var animationFrame = 0;
+    var prevDirKey = "SHD";
+    var dirKey = "SHD"; // Shoot-down
+    var ox = 0;
+    var oy = 0;
+    var px = 0;
+    var py = 0;
+    var moveDist = 10;
+    var fredSrc = "assets/fred.png";
+
+    var fred = new Image();
+    fetch("fred.json")
+      .then(response => response.json())
+      .then(json => {
+        fredMap = json;
+
+        // Fred Chexter
+        fred.addEventListener(
+          "load",
+          () => {
+            doDraw();
+            gameLoop();
+          },
+          false
+        );
+        fred.src = fredSrc;
+      });
+
+    var keyState = {};    
+    window.addEventListener('keydown',function(e){
+        keyState[e.keyCode || e.which] = true;
+    },true);    
+    window.addEventListener('keyup',function(e){
+        keyState[e.keyCode || e.which] = false;
+    },true);
+
+    // Shamelessly ripped off StackOverflow
+    function gameLoop() {
+      prevDirKey = dirKey;
+      let sx = px;
+      let sy = py;
+      let key1 = "";
+      let key2 = "";
+      if (keyState[37] || keyState[65]){
+        px -= moveDist;
+        key2 = "L";
+      }
+      if (keyState[38] || keyState[66]){
+        py -= moveDist;
+        key1 = "U";
+      }
+      if (keyState[39] || keyState[68]){
+        px += moveDist;
+        key2 = "R";
+      }
+      if (keyState[40] || keyState[69]){
+        py += moveDist;
+        key1 = "D";
+      }
+
+      dirKey = key1 + key2 || "SHD";
+      //console.log(dirKey);
+      if (dirKey == prevDirKey) {
+        animationFrame++;
+      } else {
+        animationFrame = 0;
+      }
+      requestAnimationFrame(doDraw);
+
+      setTimeout(gameLoop, 1000 / fps);
     }
   
     // Start of game logic
     var gameview = document.getElementById("gameview");
-    var context = gameview.getContext("2d");
-    // State variables
-    var frame = 1;
-    var fredSrc = "run_left_1.png";
-    // Fred Chexter
-    var fred = document.createElement("img");
-    fred.id = "fred";
-    fred.src = fredSrc;
-    fred.height = "60px";
-    fred.width = "60px";
-    
-    fred.onload = function()
-    {
-      context.drawImage(fred, 0, 0);
-    }
+    gameview.width = window.innerWidth;
+    gameview.height = window.innerHeight;
+    ox = gameview.width / 2;
+    oy = gameview.height / 2;
+
+    var ctx = gameview.getContext("2d");
+    ctx.mozImageSmoothingEnabled = false;
+    ctx.webkitImageSmoothingEnabled = false;
+    ctx.msImageSmoothingEnabled = false;
+    ctx.imageSmoothingEnabled = false;
     
     // Drawing logic
-    function doDraw()
-    {
+    function doDraw() {
       // First, clear the screen
-      context.clearRect(0, 0, gameview.width, gameview.height);
+      ctx.clearRect(0, 0, gameview.width, gameview.height);
+
+      var w = 60;
+      var h = 60;
+
       // Redraw based on new info
-      fred.src = getImgAndDeltasFromKeys();
-      context.drawImage(fred, 0, 0);
+      animationFrame = animationFrame % fredMap[dirKey].length;
+      var curFred = fredMap[dirKey][animationFrame];
+      var sx = curFred["x1"];
+      var sy = curFred["y1"];
+      var ex = curFred["x2"];
+      var ey = curFred["y2"];
+      ctx.drawImage(fred, sx, sy, ex-sx, ey-sy, ox + px, oy + py, w, h);
     }
-    
-    function getImgAndDeltasFromKeys()
-    {
-      frame = (frame % 4) + 1;
-      return "./run_left_" + frame + ".png";
-    }
-    
-    function redraw()
-    {
-      if (Object.keys(keyMap).length < 1) { return; }
-      requestAnimationFrame(doDraw);
-    }
-    
-    setInterval(redraw, 125);
   </script>
 </html>
