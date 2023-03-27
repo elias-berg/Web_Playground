@@ -21,7 +21,7 @@ This was my from-the-ground-up rewrite of the entire [Madison GAA](https://www.m
 
 The highlight of this project ended up being the Calendar that I wrote from scratch. It takes an input file indicating any recurring practices/events as well as one-off events and displays them. It's primitive, but could easily become its own project!
 
-### [Super Mario Sunshine](./SuperMarioSunshine/)
+### [Super Mario Sunshine Checklist](./SuperMarioSunshine/)
 
 This is a checklist I made for fun to track all of the shines and blue coins while I was playing through the game. I realized partway through, it makes for a great template as a starting place for a checklist-creation form. Otherwise, enjoy the aesthetics, that's pretty much all it's good for, unless you want to use it for your own playthrough!
 

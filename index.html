@@ -2,15 +2,41 @@
   <head>
     <title>Web Playground</title>
     <style>
+      * {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .header {
+        padding: 10px;
+        width: 100%;
+        color: white;
+        background-color: black;
+      }
+      a {
+        display: block;
+        height: 40px;
+        width: 100%;
+        padding: 10px;
+        line-height: 40px;
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: aquamarine;
+      }
+      a::before {
+        content: '> ';
+      }
     </style>
   </head>
   <body>
-    <h1>Web Playground</h1>
-    <ul>
-      <li><a href="./ChexQuest">ChexQuest</a></li>
-      <li><a href="./MadisonHailstones">MadisonHailstones</a></li>
-      <li><a href="./SuperMarioSunshine/Checklist.html">SuperMarioSunshine</a></li>
-      <li><a href="./Timelogger/logger.html">Timelogger</a></li>
-    </ul>
+    <div class="header">
+      <h1>Web Playground</h1>
+    </div>
+    <div class="links-container">
+      <a href="./ChexQuest">Chex Quest</a>
+      <a href="./MadisonHailstones">Madison Hailstones</a>
+      <a href="./SuperMarioSunshine/Checklist.html">Super Mario Sunshine Checklist</a>
+      <a href="./Timelogger/logger.html">Timelogger</a>
+    </div>
   </body>
 </html>
