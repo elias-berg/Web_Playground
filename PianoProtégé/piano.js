@@ -37,9 +37,9 @@ class PianoKey {
   }
 }
 
-const paintAll = (keys, ctx) => {
+const paintAll = (keys, pianoCtx) => {
   for (let key of keys) {
-    key.paintKey(ctx);
+    key.paintKey(pianoCtx);
   }
 }
 
@@ -52,22 +52,22 @@ let pressedKey = null;
 
 const notes = ["C", "D", "E", "F", "G", "A", "B"];
 
-const canvas = document.getElementById("piano");
-const ctx = canvas.getContext("2d");
+const piano = document.getElementById("piano");
+const pianoCtx = piano.getContext("2d");
 
 const paintPiano = () => {
   whiteKeys = [];
   blackKeys = [];
 
   const container = document.getElementById("bottom");
-  canvas.width = container.offsetWidth;
-  canvas.height = container.offsetHeight;
+  piano.width = container.offsetWidth;
+  piano.height = container.offsetHeight;
   
-  const width = canvas.width - 1;
-  const height = canvas.height - 1;
+  const width = piano.width - 1;
+  const height = piano.height - 1;
   
   // The body of the piano
-  ctx.lineWidth = 2.5;
+  pianoCtx.lineWidth = 2.5;
   
   // Now for each white key (C, D, E, F, G, A, and B)
   const keyW = (width / 7) - 1;
@@ -84,15 +84,15 @@ const paintPiano = () => {
     blackKeys.push(k);
   }
   
-  paintAll(whiteKeys, ctx);
-  paintAll(blackKeys, ctx);
+  paintAll(whiteKeys, pianoCtx);
+  paintAll(blackKeys, pianoCtx);
 }
 
 window.addEventListener("resize", () => {
   paintPiano();
 })
 
-canvas.addEventListener("pointerdown", (event) => {
+piano.addEventListener("pointerdown", (event) => {
   console.log(event.offsetX + "," + event.offsetY);
   pressedKey = null;
   for (const key of blackKeys) {
@@ -111,30 +111,16 @@ canvas.addEventListener("pointerdown", (event) => {
   }
   if (!pressedKey) return;
   pressedKey.setDown(true);
-  paintAll(whiteKeys, ctx);
-  paintAll(blackKeys, ctx);
+  paintAll(whiteKeys, pianoCtx);
+  paintAll(blackKeys, pianoCtx);
 });
 
-canvas.addEventListener("pointerup", (event) => {
+piano.addEventListener("pointerup", (event) => {
   pressedKey.setDown(false);
   pressedKey = null;
-  paintAll(whiteKeys, ctx);
-  paintAll(blackKeys, ctx);
+  paintAll(whiteKeys, pianoCtx);
+  paintAll(blackKeys, pianoCtx);
 });
 
 // Script Start
 paintPiano();
-
-setInterval(() => {
-  console.log("interval...");
-  const note = document.getElementById("note");
-  if (note.parentElement !== document.body) {
-    note.parentElement.remove(note);
-    document.body.appendChild(note);
-    note.top = 100;
-  }
-  if (note.style.left === "0px") {
-    note.style.left = document.body.width + "px";
-  }
-  note.style.left = (parseInt(note.style.left) - 10) + "px";
-}, 250);
