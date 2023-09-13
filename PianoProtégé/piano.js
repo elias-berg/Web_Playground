@@ -6,8 +6,8 @@ class PianoKey {
     this.H = h;
     this.IsBlack = !!isBlack;
     this.Fill = this.IsBlack ? "black" : "white";
-    this.Audio = new Audio(`assets/sounds/${note}.m4a`);
-    this.Audio.currentTime = 0.35;
+    const audioFileName = encodeURIComponent("assets/sounds/" + note + ".mp3");
+    this.Audio = new Audio(audioFileName);
   }
 
   pointInKey = (x, y) => {
@@ -25,7 +25,7 @@ class PianoKey {
     } else {
       this.Fill = this.IsBlack ? "black" : "white";
       this.Audio.pause();
-      this.Audio.currentTime = 0.35;
+      this.Audio.currentTime = 0;
     }
   }
 
@@ -50,7 +50,7 @@ let whiteKeys = [];
 let blackKeys = [];
 let pressedKey = null;
 
-const notes = ["C", "D", "E", "F", "G", "A", "B"];
+const notes = ["c", "d", "e", "f", "g", "a", "b"];
 
 const piano = document.getElementById("piano");
 const pianoCtx = piano.getContext("2d");
@@ -80,7 +80,7 @@ const paintPiano = () => {
   const midW = (keyW / 3) * 2;
   for (let i = 0; i < 6; i++) {
     if (i === 2) continue;
-    const k = new PianoKey(midW + (keyW * i) + (keyW / 6), 1, keyW / 3, height * 0.75, true);
+    const k = new PianoKey(midW + (keyW * i) + (keyW / 6), 1, keyW / 3, height * 0.75, true, notes[i] + "#4");
     blackKeys.push(k);
   }
   

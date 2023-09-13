@@ -22,3 +22,5 @@ $RECYCLE.BIN/
 node_modules/
 
 .DS_Store
+
+.envrc

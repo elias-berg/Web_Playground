@@ -11,15 +11,15 @@ class StaffBar {
 
 // Working around the lack of enumerations
 const NoteType = {
-  C: "C",
-  D: "D",
-  E: "E",
-  F: "F",
-  G: "G",
-  A: "A",
-  B: "B",
+  c: "c",
+  d: "d",
+  e: "e",
+  f: "f",
+  g: "g",
+  a: "a",
+  b: "b",
 }
-const NoteLetters = ["C", "D", "E", "F", "G", "A", "B"];
+const NoteLetters = ["c", "d", "e", "f", "g", "a", "b"];
 
 class Note {
   constructor(staffBars, noteType) {
@@ -40,19 +40,19 @@ class Note {
     const barHeight = this.ParentStaff.BarHeight;
     const halfHeight = barHeight / 2;
     switch (this.NoteType) {
-      case NoteType.C:
+      case NoteType.c:
         return bars[4].Y + barHeight; // One full height below the bar
-      case NoteType.D:
+      case NoteType.d:
         return bars[4].Y + halfHeight;
-      case NoteType.E:
+      case NoteType.e:
         return bars[4].Y;
-      case NoteType.F:
+      case NoteType.f:
         return bars[4].Y - halfHeight;
-      case NoteType.G:
+      case NoteType.g:
         return bars[3].Y;
-      case NoteType.A:
+      case NoteType.a:
         return bars[3].Y - halfHeight;
-      case NoteType.B:
+      case NoteType.b:
         return bars[2].Y;
       default:
         return 120;
@@ -156,7 +156,7 @@ class Staff {
 
   // TODO: Replace this eventually
   randomNote = () => {
-    const rand = Math.floor(Math.random() * 15) % 7;
+    const rand = Math.floor(Math.random() * 15) % NoteLetters.length;
     console.log(NoteLetters[rand]);
     return NoteLetters[rand];
   }

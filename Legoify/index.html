@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <style>
+      * {
+        margin: 0;
+      }
+
+      @font-face {
+        font-family: lego;
+        src: url("assets/Legothick.ttf"); 
+      }
+
+      #body {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+      }
+
+      h1 {
+        font-family: lego;
+        font-size: 4rem;
+        padding: 5px;
+        margin-bottom: 10px;
+        /* For LEGO effect... */
+        letter-spacing: 5px;
+        color: white;
+        background-color: red;
+        border: 5px solid black;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+
+        
+      }
+
+      #image-area {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #dimensions {
+        width: 119px;
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      #wRange {
+        width: 500px;
+      }
+
+      #model-area {
+        flex-grow: 1;
+      }
+
+      #lego-area {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LEGOIFY</h1>
+    <div id="body">
+      <div id="image-area">
+          <div style="display: flex; align-items: center;">
+            <input id="hRange" type="range" min="0" max="100" step="10" style="appearance: slider-vertical; height: 500px;"/>
+            <canvas id="canvas" style="width: 500px; height: 500px;"></canvas>
+          </div>
+          <div style="display: flex; margin-top: 10px;">
+            <div id="dimensions">0, 0</div>
+            <input id="wRange" type="range" step="10" min="0" max="100" />
+          </div>
+      </div>
+      <div id="model-area">
+        <canvas id="model" style="width: 500px; height: 500px;"></canvas>
+      </div>
+
+      <div id="lego-area">
+        <canvas id="lego" style="width: 500px; height: 500px;"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="processor.js"></script>
+  </body>
+</html>
