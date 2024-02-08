@@ -6,15 +6,34 @@ const model = document.getElementById("model");
 const modelCtx = model.getContext("2d");
 let modelData = []; // The set of average pixels to conver to lego colors
 
+const lego = document.getElementById("lego");
+const legoCtx = lego.getContext("2d");
+let brickData = [];
+
 const wRange = document.getElementById("wRange");
 const hRange = document.getElementById("hRange");
 const dimens = document.getElementById("dimensions");
 
-// black, blue-gray, brown, green, light green, dark green, sky?, white
-const palette = [0x000000, 0x666699, 0x996633, 0x009933, 0x00cc00, 0x003300, 0x0099ff, 0xffffff];
-let brickData = [];
+// palette for the japanese wave image
+// brown, white, dark blue, light blue, gray
+const palette = ["rgb(255,234,128)", "rgb(255,255,255)", "rgb(26,0,153)", "rgb(102,230,255)", "rgb(100,100,100)"];
 
 let debounce = null;
+
+const rgb2Ary = (rgbStr) => {
+  const nums = rgbStr.substring(rgbStr.indexOf("(") + 1, rgbStr.length - 1);
+  return nums.split(",").map((numStr) => +numStr);
+};
+
+const dist3D = (p1, p2) => {
+  const [x1, y1, z1] = p1;
+  const [x2, y2, z2] = p2;
+  return Math.sqrt(
+    Math.pow((z2 - z1), 2) +
+    Math.pow((y2 - y1), 2) +
+    Math.pow((x2 - x1), 2)
+  );
+};
 
 const getAveragePixelColor = (x, y, w, h) => {
   const pixels = [];
@@ -58,12 +77,26 @@ const updateDimensions = (w, h) => {
     }
   }
 
+  // Convert the pixellated model into the colors we have on the palette
   for (let r = 0; r < modelData.length; r++) {
     brickData.push([]);
     for (let c = 0; c < modelData[0].length; c++) {
-      let color = modelData[r][c];
+      let cur = modelData[r][c];
 
-      // TODO
+      // TODO:
+      // What if there's a distance tie? we need to probably just check and see
+      // what the surrounding pixels are closer to.
+      let best = palette[0];
+      for (let i = 1; i < palette.length; i++) {
+        let color = palette[i];
+        // Compare the disances from the current color to the palette colors
+        if (dist3D(cur, rgb2Ary(color)) <= dist3D(cur, rgb2Ary(best))) {
+          best = color;
+        }
+      }
+
+      legoCtx.fillStyle = best;
+      legoCtx.fillRect(r * wPixels, c * hPixels, wPixels, hPixels);
     }
   }
 };
@@ -87,7 +120,7 @@ hRange.addEventListener("input", (e) => {
 // TODO: Replace this chunk with an image uploader
 const img = new Image();
 img.crossOrigin = "anonymous";
-img.src = "assets/fox.jpeg";
+img.src = "assets/wave.jpeg";
 
 img.addEventListener("load", () => {
   let wScale = canvas.width / img.naturalWidth;
